@@ -1,0 +1,8 @@
+pandoc: 1.19.2.1
+pkgdown: 1.1.0
+pkgdown_sha: ~
+articles: []
+urls:
+  reference: https://kwb-r.github.io/kwb.event/reference
+  article: https://kwb-r.github.io/kwb.event/articles
+
