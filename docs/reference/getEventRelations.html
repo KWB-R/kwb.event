@@ -117,7 +117,7 @@
     <tr>
       <th>events</th>
       <td><p>list of event lists (in a data frame), as e.g. returned by 
-<code>getEventsWithStatisticsForMultipleSeries</code></p></td>
+<code><a href='getEventsWithStatisticsForMultipleSeries.html'>getEventsWithStatisticsForMultipleSeries</a></code></p></td>
     </tr>
     <tr>
       <th>referenceName</th>
@@ -134,7 +134,7 @@ numbers of the events which are compared to the events in column
     <tr>
       <th>parallelEventInfo</th>
       <td><p>data frame as returned by
-<code>getParallelEventsInfo</code>. If NULL, <em>events</em> must be
+<code><a href='getParallelEventsInfo.html'>getParallelEventsInfo</a></code>. If NULL, <em>events</em> must be
 specified.</p></td>
     </tr>
     </table>
@@ -193,7 +193,7 @@ specified.</p></td>
 <span class='co'># Define plot matrix of two rows and one column</span>
 <span class='no'>old.par</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='http://www.rdocumentation.org/packages/graphics/topics/par'>par</a></span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>2</span>, <span class='fl'>1</span>))
 
-<span class='fu'>ganttPlotEvents</span>(
+<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span>(
   <span class='kw'>events</span> <span class='kw'>=</span> <span class='no'>rainEvents</span>$<span class='no'>BlnX</span>[],
   <span class='kw'>indicate</span> <span class='kw'>=</span> <span class='no'>containing</span>$<span class='no'>event1</span>,
   <span class='kw'>ylim</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>2.8</span>),
@@ -201,7 +201,7 @@ specified.</p></td>
   <span class='kw'>indicationColour</span> <span class='kw'>=</span> <span class='st'>"blue"</span>
 )
 
-<span class='fu'>ganttPlotEvents</span>(
+<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span>(
   <span class='no'>rainEvents</span>$<span class='no'>Wil</span>,
   <span class='kw'>indicate</span> <span class='kw'>=</span> <span class='no'>containing</span>$<span class='no'>event2</span>,
   <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
@@ -219,14 +219,14 @@ specified.</p></td>
 <span class='no'>overlappingLeft</span> <span class='kw'>&lt;-</span> <span class='no'>eventRelations</span>[<span class='no'>isOverlappingLeft</span>, ]
 
 <span class='co'># Again, check this graphically:</span>
-<span class='fu'>ganttPlotEvents</span>(
+<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span>(
   <span class='kw'>events</span> <span class='kw'>=</span> <span class='no'>rainEvents</span>$<span class='no'>BlnX</span>[],
   <span class='kw'>indicate</span> <span class='kw'>=</span> <span class='no'>overlappingLeft</span>$<span class='no'>event1</span>,
   <span class='kw'>ylim</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='fl'>1</span>, <span class='fl'>2.8</span>),
   <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"BlnX"</span>,
   <span class='kw'>indicationColour</span> <span class='kw'>=</span> <span class='st'>"blue"</span>
 )</div><div class='input'>
-<span class='fu'>ganttPlotEvents</span>(
+<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span>(
   <span class='no'>rainEvents</span>$<span class='no'>Wil</span>,
   <span class='kw'>indicate</span> <span class='kw'>=</span> <span class='no'>overlappingLeft</span>$<span class='no'>event2</span>,
   <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,

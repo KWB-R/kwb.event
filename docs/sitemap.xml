@@ -1,138 +1,138 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/index.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/index.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/analyseEventRelations.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/analyseEventRelations.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/eventDuration.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/eventDuration.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/eventLimits.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/eventLimits.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/eventPauses.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/eventPauses.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/eventRelation.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/eventRelation.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/eventsByState.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/eventsByState.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/eventToXLim.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/eventToXLim.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/exampleEvents.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/exampleEvents.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/filterEventsWithStatistics.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/filterEventsWithStatistics.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/ganttPlotEventLists.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/ganttPlotEventLists.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/ganttPlotEvents.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/ganttPlotEvents.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/getAndFilterEventsWithStatistics.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/getAndFilterEventsWithStatistics.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/getEventRelations.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/getEventRelations.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/getEvents.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/getEvents.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/getEventStatistics.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/getEventStatistics.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/getEventsWithStatistics.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/getEventsWithStatistics.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/getEventsWithStatisticsForMultipleSeries.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/getEventsWithStatisticsForMultipleSeries.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/getParallelEventNotEndingAfter.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/getParallelEventNotEndingAfter.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/getParallelEventsInfo.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/getParallelEventsInfo.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/getXLimFromEventLists.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/getXLimFromEventLists.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/hsEventNumber.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/hsEventNumber.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/hsEvents.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/hsEvents.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/hsEventsOnChange.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/hsEventsOnChange.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/hsEventsToUnit.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/hsEventsToUnit.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/hsGetEvent.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/hsGetEvent.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/hsJoinEvents.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/hsJoinEvents.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/hsMergeEvents.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/hsMergeEvents.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/hsSigWidth.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/hsSigWidth.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/indicesOfEventsContainedInEvent.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/indicesOfEventsContainedInEvent.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/indicesOfEventsContainingEvent.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/indicesOfEventsContainingEvent.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/invertedEvents.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/invertedEvents.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/mergeAllEvents.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/mergeAllEvents.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/overlapping.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/overlapping.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/plotEventInfo.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/plotEventInfo.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/plotEventProperty1VersusEventProperty2.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/plotEventProperty1VersusEventProperty2.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/plotMergedEventInfoForValidation.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/plotMergedEventInfoForValidation.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/rainEvents.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/rainEvents.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/readEventFilesFromDirectory.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/readEventFilesFromDirectory.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/readEventsFromFile.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/readEventsFromFile.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/renumberEvents.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/renumberEvents.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/timeDifferencesToPauses.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/timeDifferencesToPauses.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/toEvents.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/toEvents.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/validateEventFunctionArguments.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/validateEventFunctionArguments.html</loc>
   </url>
   <url>
-    <loc>https://kwb-r.github.io/kwb.event/reference/whichAboveThreshold.html</loc>
+    <loc>http://kwb-r.github.io/kwb.event/reference/whichAboveThreshold.html</loc>
   </url>
 </urlset>

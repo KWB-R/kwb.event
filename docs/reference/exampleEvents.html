@@ -124,7 +124,7 @@ passed on to hsEvents that groups these "signal" timestamps into events</p></td>
     </tr>
     <tr>
       <th>&#8230;</th>
-      <td><p>further arguments passed to <code>hsEvents</code></p></td>
+      <td><p>further arguments passed to <code><a href='hsEvents.html'>hsEvents</a></code></p></td>
     </tr>
     </table>
     
@@ -133,7 +133,7 @@ passed on to hsEvents that groups these "signal" timestamps into events</p></td>
     <pre class="examples"><div class='input'><span class='no'>events</span> <span class='kw'>&lt;-</span> <span class='fu'>exampleEvents</span>()
 
 <span class='co'># Calculate event durations manually</span>
-<span class='no'>dur</span> <span class='kw'>&lt;-</span> <span class='fu'>as.integer</span>(<span class='no'>events</span>$<span class='no'>tEnd</span>) - <span class='fu'>as.integer</span>(<span class='no'>events</span>$<span class='no'>tBeg</span>) + <span class='fu'>hsSigWidth</span>(<span class='no'>events</span>)
+<span class='no'>dur</span> <span class='kw'>&lt;-</span> <span class='fu'>as.integer</span>(<span class='no'>events</span>$<span class='no'>tEnd</span>) - <span class='fu'>as.integer</span>(<span class='no'>events</span>$<span class='no'>tBeg</span>) + <span class='fu'><a href='hsSigWidth.html'>hsSigWidth</a></span>(<span class='no'>events</span>)
 
 <span class='co'># All durations should be equal to the durations given in column "dur"</span>
 <span class='fu'>all</span>(<span class='no'>dur</span> <span class='kw'>==</span> <span class='no'>events</span>$<span class='no'>dur</span>)</div><div class='output co'>#&gt; [1] TRUE</div><div class='input'>
