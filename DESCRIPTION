@@ -1,0 +1,9 @@
+Package: kwb.event
+Maintainer: Hauke Sonnenberg <hauke.sonnenberg@kompetenz-wasser.de>
+Imports: kwb.plot, kwb.utils, kwb.datetime
+Author: Hauke Sonnenberg
+Version: 0.3.0
+License: GPL
+Title: Generate Events from Time Series and work with Events
+Description: Functions to generate events from time series and work with events.
+RoxygenNote: 6.0.1
