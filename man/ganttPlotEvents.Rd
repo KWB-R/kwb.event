@@ -47,6 +47,10 @@ rownames(\emph{events})}
 \item{leftMargin}{left margin (where title is printed) as fraction of the
 range of the total time interval spanned by the events}
 
+\item{xlab}{x axis label}
+
+\item{cex}{character expansion factor}
+
 \item{indicate}{indices of events to be indicated in a different color
 (indicationColuor)}
 

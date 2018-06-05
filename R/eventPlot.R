@@ -2,6 +2,11 @@
 
 #' Plot merged Event Info for Validation
 #' 
+#' @param mergedEvents data frame containing information about merged events,
+#'   i.e. containing columns \code{tBeg.event1}, \code{tEnd.event1}, 
+#'   \code{tBeg.event2first}, \code{tEnd.event2last}, \code{tBeg.merged}, 
+#'   \code{tEnd.merged}
+#' 
 plotMergedEventInfoForValidation <- function(mergedEvents)
 {
   beginEndColumns <- c(
@@ -93,10 +98,14 @@ plotEventInfo <- function(eventInfo)
 #' 
 #' @param events data frame with at least two columns named as given in 
 #'   \emph{propertyName1} and \emph{propertyName2}
+#' @param propertyName1 name of property to appear on the x-axis
+#' @param propertyName2 name of property to appear on the y-axis
 #' @param eventNumbers vector of event numbers used for labelling. Default:
 #'   rownames of \emph{events}
-#' @param xlab default: propertyName1
-#' @param ylab default: propertyName2
+#' @param xlab default: \code{propertyName1}
+#' @param ylab default: \code{propertyName2}
+#' @param cex character expansion factor passed to \code{\link[graphics]{plot}}
+#' @param \dots further arguments passed to \code{\link[graphics]{plot}}
 #' 
 plotEventProperty1VersusEventProperty2 <- function(
   events, propertyName1, propertyName2, eventNumbers = events$eventNumber,
@@ -150,6 +159,10 @@ plotEventProperty1VersusEventProperty2 <- function(
 #' 
 #' @param eventLists list of data frames containing events (containing columns
 #'   \emph{tBeg}, \emph{tBeg}, as returned by \code{\link{hsEvents}})
+#' @param margin.top top margin as a fraction of the total plot height
+#' @param time.format passed to \code{\link[kwb.plot]{addTimeAxis}}
+#' @param n.xticks passed to \code{\link[kwb.plot]{addTimeAxis}}
+#' @param showLabels passed to \code{\link{ganttPlotEvents}}
 #' @param \dots further arguments passed to ganttPlotEvents
 #' 
 ganttPlotEventLists <- function(
@@ -250,6 +263,8 @@ ganttPlotEventLists <- function(
 #' @param title title to be plotted left of event rectangles
 #' @param leftMargin left margin (where title is printed) as fraction of the
 #'   range of the total time interval spanned by the events
+#' @param xlab x axis label
+#' @param cex character expansion factor
 #' @param indicate indices of events to be indicated in a different color
 #'   (indicationColuor)
 #' @param indicationColour colour to be used for indication, default: "red" 

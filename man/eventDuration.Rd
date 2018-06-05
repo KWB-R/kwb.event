@@ -11,11 +11,7 @@ eventDuration(tBeg, tEnd, signalWidth)
 
 \item{tEnd}{timestamps representing the event ends}
 
-\item{signalWidth}{\dQuote{signal width} in seconds. Length of time interval
-that one timestamp is representing, e.g. \eqn{5*60 = 300} if each timestamp
-respresents a time interval of five minutes (as e.g. a time series is
-recorded on a five minute time scale). This parameter is needed to
-calculate event durations.}
+\item{signalWidth}{see description in \code{\link{hsEvents}}}
 }
 \description{
 Event Duration

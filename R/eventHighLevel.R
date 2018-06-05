@@ -2,6 +2,17 @@
 
 #' Get and filter Events with Statistics
 #' 
+#' @param rainData passed to \code{\link{getEventsWithStatistics}}
+#' @param seriesName passed to \code{\link{getEventsWithStatistics}}
+#' @param eventSeparationTime passed to \code{\link{getEventsWithStatistics}}
+#' @param signalThreshold passed to \code{\link{getEventsWithStatistics}}
+#' @param durationThreshold passed to \code{\link{filterEventsWithStatistics}}
+#' @param sumThreshold passed to \code{\link{filterEventsWithStatistics}}
+#' @param signalComparisonOperator passed to \code{\link{getEventsWithStatistics}}
+#' @param durationComparisonOperator \code{\link{filterEventsWithStatistics}}
+#' @param sumComparisonOperator \code{\link{filterEventsWithStatistics}}
+#' @param signalWidth passed to \code{\link{getEventsWithStatistics}}
+#' 
 getAndFilterEventsWithStatistics <- function(
   rainData, 
   seriesName, 
@@ -101,6 +112,7 @@ getEventsWithStatisticsForMultipleSeries <- function(
 #'   heights (or intensities) in the remaining columns
 #' @param seriesName Column name in rainData representing the time series to be
 #'   analysed.
+#' @param eventSeparationTime passed to \code{\link{getEvents}}
 #' @param signalThreshold value that needs to be exceeded
 #'   (signalComparisonOperator == "gt") or reached (signalComparisonOperator ==
 #'   "ge") by the rain heights (or intensities) in order to be counted as a
@@ -108,6 +120,9 @@ getEventsWithStatisticsForMultipleSeries <- function(
 #' @param signalComparisonOperator Operator to be applied when comparing rain
 #'   values with signalThreshold. Must be one of "gt" (greater than) or "ge"
 #'   greater than or equal. Default: "gt"
+#' @param eventSeparationOperator passed to \code{\link{getEvents}}
+#' @param functions passed to \code{\link{getEventStatistics}}
+#' @param signalWidth passed to \code{\link{getEvents}}
 #' 
 getEventsWithStatistics <- function(
   rainData,
@@ -239,6 +254,10 @@ getEvents <- function(
 
 #' Get Event Statistics
 #' 
+#' @param dataFrame data frame containing event data
+#' @param seriesName name of column in \code{dataFrame}
+#' @param events data frame containing event information as provided by 
+#'   \code{\link{hsGetEvent}}
 #' @param functions define statistical functions
 #' @param eventNumbers vector of same length as \emph{events} has rows, giving
 #'   the numbers that identify the events. Default: 1:nrow(\emph{events})
@@ -255,10 +274,13 @@ getEventStatistics <- function(
   stopifnot(length(seriesName) == 1)
   
   indices <- kwb.utils::posixColumnAtPosition(dataFrame)
+  
   columns <- c(names(dataFrame)[indices], seriesName)
   
   FUN <- function(i) {
+    
     eventData <- hsGetEvent(dataFrame[, columns], events, i)
+    
     kwb.utils::colStatistics(
       eventData[, -1, drop = FALSE], functions = functions
     )
@@ -269,9 +291,13 @@ getEventStatistics <- function(
   statistics <- data.frame(event = eventNumbers)
   
   for (i in seq_len(length(functions))) {
+    
     FUN <- functions[i]
+    
     statisticsPerEvent <- sapply(statistics.list, FUN = "[[", i)
+    
     statistics <- cbind(statistics, statisticsPerEvent)
+    
     names(statistics)[ncol(statistics)] <- FUN
   }
   
@@ -322,6 +348,9 @@ filterEventsWithStatistics <- function(
 
 #' Validate Event Function Arguments
 #' 
+#' @param \dots arguments, given as \code{key = value} pairs, to be checked for 
+#'   validity
+#' 
 validateEventFunctionArguments <- function(...)
 {
   arguments <- list(...) 
@@ -348,6 +377,7 @@ validateEventFunctionArguments <- function(...)
     if (argumentName %in% argumentNames) {
       
       comparisonOperator <- arguments[[argumentName]]
+      
       stopifnot (comparisonOperator %in% c("gt", "ge"))    
     }
   }
@@ -356,6 +386,14 @@ validateEventFunctionArguments <- function(...)
 # whichAboveThreshold ----------------------------------------------------------
 
 #' Which Values are above a Threshold?
+#' 
+#' @param values numeric vector of values to be compared with the 
+#'   \code{threshold}
+#' @param threshold numeric value against which to check the \code{values}
+#' @param comparisonOperator if "gt" it is checked whether the \code{values} 
+#'   are \emph{greater than} the \code{threshold}, otherwise it is checked
+#'   whether the \code{values} are \code{greater than or equal to} the
+#'   \code{threshold}
 #' 
 whichAboveThreshold <- function(values, threshold, comparisonOperator)
 {  

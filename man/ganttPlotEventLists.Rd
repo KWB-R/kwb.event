@@ -11,6 +11,14 @@ ganttPlotEventLists(eventLists, margin.top = 0.8, time.format = NULL,
 \item{eventLists}{list of data frames containing events (containing columns
 \emph{tBeg}, \emph{tBeg}, as returned by \code{\link{hsEvents}})}
 
+\item{margin.top}{top margin as a fraction of the total plot height}
+
+\item{time.format}{passed to \code{\link[kwb.plot]{addTimeAxis}}}
+
+\item{n.xticks}{passed to \code{\link[kwb.plot]{addTimeAxis}}}
+
+\item{showLabels}{passed to \code{\link{ganttPlotEvents}}}
+
 \item{\dots}{further arguments passed to ganttPlotEvents}
 }
 \description{

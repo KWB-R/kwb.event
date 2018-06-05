@@ -8,6 +8,13 @@ getEventStatistics(dataFrame, seriesName, events, functions = c("sum", "mean",
   "min", "max", "number.na"), eventNumbers = 1:nrow(events))
 }
 \arguments{
+\item{dataFrame}{data frame containing event data}
+
+\item{seriesName}{name of column in \code{dataFrame}}
+
+\item{events}{data frame containing event information as provided by 
+\code{\link{hsGetEvent}}}
+
 \item{functions}{define statistical functions}
 
 \item{eventNumbers}{vector of same length as \emph{events} has rows, giving

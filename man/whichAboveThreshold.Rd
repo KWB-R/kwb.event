@@ -6,6 +6,17 @@
 \usage{
 whichAboveThreshold(values, threshold, comparisonOperator)
 }
+\arguments{
+\item{values}{numeric vector of values to be compared with the 
+\code{threshold}}
+
+\item{threshold}{numeric value against which to check the \code{values}}
+
+\item{comparisonOperator}{if "gt" it is checked whether the \code{values} 
+are \emph{greater than} the \code{threshold}, otherwise it is checked
+whether the \code{values} are \code{greater than or equal to} the
+\code{threshold}}
+}
 \description{
 Which Values are above a Threshold?
 }

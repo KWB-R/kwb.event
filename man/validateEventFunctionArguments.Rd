@@ -6,6 +6,10 @@
 \usage{
 validateEventFunctionArguments(...)
 }
+\arguments{
+\item{\dots}{arguments, given as \code{key = value} pairs, to be checked for 
+validity}
+}
 \description{
 Validate Event Function Arguments
 }

@@ -22,7 +22,7 @@ to either belong to an event or not, depending on the previous clear state
 
 \item{eventSeparationTime}{same meaning as in \code{\link{hsEvents}}}
 
-\item{signalWidth}{same meaning as in \code{\link{hsEvents}}}
+\item{signalWidth}{see description in \code{\link{hsEvents}}}
 
 \item{in.state}{value in \emph{states} indicating the state "in event".
 Default: 1}

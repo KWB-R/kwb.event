@@ -10,7 +10,7 @@ hsEventNumber(tstamps, events, eventNumbers = 1:nrow(events),
 \arguments{
 \item{tstamps}{vector of timestamps}
 
-\item{events}{event information as returned by hsEvents}
+\item{events}{event information as returned by \code{\link{hsEvents}}}
 
 \item{eventNumbers}{optional vector of event numbers with as many elements as
 there are rows in \emph{tstamps}. Default: 1:nrow(\emph{events})}

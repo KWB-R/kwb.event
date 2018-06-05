@@ -8,6 +8,10 @@ eventPauses(events, signalWidth = .getSignalWidth(events),
   timeDifferences = NULL)
 }
 \arguments{
+\item{events}{event information as returned by \code{\link{hsEvents}}}
+
+\item{signalWidth}{see description in \code{\link{hsEvents}}}
+
 \item{timeDifferences}{if time differences have been calculated beforehand,
 these may be given here (in seconds)}
 }

@@ -10,7 +10,7 @@ hsGetEvent(tSeries, events, evtnums, useIndex = FALSE)
 \item{tSeries}{data frame representing time series with first column holding
 the timestamp}
 
-\item{events}{event information as returned by hsEvents}
+\item{events}{event information as returned by \code{\link{hsEvents}}}
 
 \item{evtnums}{vector of event numbers to be selected}
 

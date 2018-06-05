@@ -7,7 +7,7 @@
 renumberEvents(events)
 }
 \arguments{
-\item{events}{data frame}
+\item{events}{event information as returned by \code{\link{hsEvents}}}
 }
 \value{
 data frame with (additional) column \emph{event}

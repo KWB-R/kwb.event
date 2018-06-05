@@ -15,6 +15,10 @@ events}
 
 \item{eventRelations}{event relations as returned by
 \code{\link{getEventRelations}}}
+
+\item{extended}{if \code{TRUE}, the output contains more columns as the
+minimum columns that are containd else: \code{event1}, \code{tBeg.merged},
+\code{tEnd.merged}, \code{event2first}, \code{event2last}}
 }
 \description{
 Calculates event borders (event begin, event end) considering "parallel" 

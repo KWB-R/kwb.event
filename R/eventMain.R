@@ -13,7 +13,7 @@
 #'   to either belong to an event or not, depending on the previous clear state
 #'   ("in" or "out") in the sequence of states.
 #' @param eventSeparationTime same meaning as in \code{\link{hsEvents}}
-#' @param signalWidth same meaning as in \code{\link{hsEvents}}
+#' @param signalWidth see description in \code{\link{hsEvents}}
 #' @param in.state value in \emph{states} indicating the state "in event".
 #'   Default: 1
 #' @param out.state value in \emph{states} indicating the state "out of event".
@@ -114,7 +114,7 @@ eventsByState <- function(
 #' 
 #' add event number (= real row number) in column \emph{event}
 #' 
-#' @param events data frame
+#' @param events event information as returned by \code{\link{hsEvents}}
 #' 
 #' @return data frame with (additional) column \emph{event}
 #' 
@@ -371,7 +371,7 @@ getXLimFromEventLists <- function(eventLists)
 #' numbering timestamps according to event information
 #' 
 #' @param tstamps vector of timestamps
-#' @param events event information as returned by hsEvents
+#' @param events event information as returned by \code{\link{hsEvents}}
 #' @param eventNumbers optional vector of event numbers with as many elements as
 #'   there are rows in \emph{tstamps}. Default: 1:nrow(\emph{events})
 #' @param commaSeparated if there are timestamps taht belong to more than one
@@ -471,6 +471,7 @@ hsEventNumber <- function(
 #' Calculates signal width that was applied in event list \emph{evts}
 #' 
 #' @param evts data frame containing events (as e.g. provided by hsEvents)
+#' @param dbg if \code{TRUE}, debug messages are shown.
 #' 
 #' @return signal width in seconds
 #' 
@@ -588,8 +589,10 @@ hsEventsToUnit <- function(evts, tUnit)
 #'   \emph{evtSepTime}. If \emph{evtSepOp} = "ge" events are separated on time
 #'   differences between two consecutive timestamps that are \emph{g}reater than
 #'   or \emph{e}qual to \emph{evtSepTime}.
-#' @param dbg if TRUE, debug messages are shown.
-#'   
+#' @param dbg if \code{TRUE}, debug messages are shown.
+#' @param check.sorting if \code{TRUE}, it is checked whether the timestamps
+#'   given in \code{tseries} are sorted and the program stops if this is not the
+#'   case.
 #' @return data frame with columns \emph{iBeg} and \emph{iEnd} indicating first
 #'   and last index of the event in the \emph{tseries} vector, \emph{tBeg} and 
 #'   \emph{tEnd} indicating first and last timestamp of the event and \emph{dur}
@@ -685,11 +688,7 @@ hsEvents <- function(
 #' 
 #' @param tBeg timestamps representing the event begins
 #' @param tEnd timestamps representing the event ends
-#' @param signalWidth \dQuote{signal width} in seconds. Length of time interval
-#'   that one timestamp is representing, e.g. \eqn{5*60 = 300} if each timestamp
-#'   respresents a time interval of five minutes (as e.g. a time series is
-#'   recorded on a five minute time scale). This parameter is needed to
-#'   calculate event durations.
+#' @param signalWidth see description in \code{\link{hsEvents}}
 #' 
 eventDuration <- function(tBeg, tEnd, signalWidth)
 {
@@ -702,11 +701,7 @@ eventDuration <- function(tBeg, tEnd, signalWidth)
 #' 
 #' @param events data frame with columns \emph{tBeg} (event begins) and
 #'   \emph{tEnd} (event ends)
-#' @param signalWidth \dQuote{signal width} in seconds. Length of time interval
-#'   that one timestamp is representing, e.g. \eqn{5*60 = 300} if each timestamp
-#'   respresents a time interval of five minutes (as e.g. a time series is
-#'   recorded on a five minute time scale). This parameter is needed to
-#'   calculate event durations.
+#' @param signalWidth see description in \code{\link{hsEvents}}
 #' @param timeUnit time unit of event duration and event pauses
 #' @param pause if TRUE, pauses before and after the events are calculated
 #' @param timeDifferences if time differences have been calculated beforehand,
@@ -799,6 +794,8 @@ toEvents <- function(
 
 #' Pauses between Events in Seconds
 #' 
+#' @param events event information as returned by \code{\link{hsEvents}}
+#' @param signalWidth see description in \code{\link{hsEvents}}
 #' @param timeDifferences if time differences have been calculated beforehand,
 #'   these may be given here (in seconds)
 #'   
@@ -826,14 +823,16 @@ eventPauses <- function(
 
 #' Time Differences to Columns "pBefore" and "pAfter"
 #' 
+#' @param timeDifferences numeric vector representing time differences
+#' @param signalWidth difference between two consecutive timesteps in the 
+#'   original time series
+#' 
 #' @return data frame with columns \emph{pBefore}, \emph{pAfter}, containing the
 #'   given \emph{timeDifferences}, shifted against each other by one row, i.e.
 #'   the first element in column \emph{pBefore} and the last element in column 
 #'   \emph{pAfter} will be NA.
 #' 
-timeDifferencesToPauses <- function(
-  timeDifferences, signalWidth = 0
-)
+timeDifferencesToPauses <- function(timeDifferences, signalWidth = 0)
 {
   data.frame(
     pBefore = c(NA, timeDifferences) - signalWidth, 
@@ -917,7 +916,7 @@ hsEventsOnChange <- function(x, numberOnly = FALSE, include.value = FALSE)
 #' 
 #' @param tSeries data frame representing time series with first column holding
 #'   the timestamp
-#' @param events event information as returned by hsEvents
+#' @param events event information as returned by \code{\link{hsEvents}}
 #' @param evtnums vector of event numbers to be selected
 #' @param useIndex if TRUE, \emph{tSeries} is filtered by comparing the real row
 #'   number in \emph{tSeries} with the begin and end indices given in columns 

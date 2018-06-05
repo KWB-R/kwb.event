@@ -30,7 +30,11 @@ between two consecutive timestamps that are \emph{g}reater \emph{t}han
 differences between two consecutive timestamps that are \emph{g}reater than
 or \emph{e}qual to \emph{evtSepTime}.}
 
-\item{dbg}{if TRUE, debug messages are shown.}
+\item{dbg}{if \code{TRUE}, debug messages are shown.}
+
+\item{check.sorting}{if \code{TRUE}, it is checked whether the timestamps
+given in \code{tseries} are sorted and the program stops if this is not the
+case.}
 }
 \value{
 data frame with columns \emph{iBeg} and \emph{iEnd} indicating first

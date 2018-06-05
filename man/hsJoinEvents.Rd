@@ -14,6 +14,8 @@ hsJoinEvents(evts, ..., renumber = TRUE, dbg = FALSE)
 
 \item{renumber}{if TRUE, rows in result data frame are renumbered from one to
 number of rows.}
+
+\item{dbg}{if \code{TRUE}, debug messages are shown.}
 }
 \value{
 A data frame with fields \emph{tBeg}, \emph{tEnd}, \emph{dur}

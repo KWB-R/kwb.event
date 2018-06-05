@@ -16,6 +16,8 @@ heights (or intensities) in the remaining columns}
 \item{seriesName}{Column name in rainData representing the time series to be
 analysed.}
 
+\item{eventSeparationTime}{passed to \code{\link{getEvents}}}
+
 \item{signalThreshold}{value that needs to be exceeded
 (signalComparisonOperator == "gt") or reached (signalComparisonOperator ==
 "ge") by the rain heights (or intensities) in order to be counted as a
@@ -24,6 +26,12 @@ analysed.}
 \item{signalComparisonOperator}{Operator to be applied when comparing rain
 values with signalThreshold. Must be one of "gt" (greater than) or "ge"
 greater than or equal. Default: "gt"}
+
+\item{eventSeparationOperator}{passed to \code{\link{getEvents}}}
+
+\item{functions}{passed to \code{\link{getEventStatistics}}}
+
+\item{signalWidth}{passed to \code{\link{getEvents}}}
 }
 \description{
 Get Events with Statistics

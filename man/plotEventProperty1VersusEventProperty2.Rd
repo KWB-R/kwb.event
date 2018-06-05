@@ -12,12 +12,20 @@ plotEventProperty1VersusEventProperty2(events, propertyName1, propertyName2,
 \item{events}{data frame with at least two columns named as given in 
 \emph{propertyName1} and \emph{propertyName2}}
 
+\item{propertyName1}{name of property to appear on the x-axis}
+
+\item{propertyName2}{name of property to appear on the y-axis}
+
 \item{eventNumbers}{vector of event numbers used for labelling. Default:
 rownames of \emph{events}}
 
-\item{xlab}{default: propertyName1}
+\item{xlab}{default: \code{propertyName1}}
 
-\item{ylab}{default: propertyName2}
+\item{ylab}{default: \code{propertyName2}}
+
+\item{cex}{character expansion factor passed to \code{\link[graphics]{plot}}}
+
+\item{\dots}{further arguments passed to \code{\link[graphics]{plot}}}
 }
 \description{
 Plot Event Property 1 versus Event Property 2

@@ -6,6 +6,12 @@
 \usage{
 plotMergedEventInfoForValidation(mergedEvents)
 }
+\arguments{
+\item{mergedEvents}{data frame containing information about merged events,
+i.e. containing columns \code{tBeg.event1}, \code{tEnd.event1}, 
+\code{tBeg.event2first}, \code{tEnd.event2last}, \code{tBeg.merged}, 
+\code{tEnd.merged}}
+}
 \description{
 Plot merged Event Info for Validation
 }

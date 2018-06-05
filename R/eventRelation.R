@@ -53,7 +53,10 @@ overlapping <- function(events)
 #' @param events2 parallel events, e.g. rain events
 #' @param eventRelations event relations as returned by
 #'   \code{\link{getEventRelations}}
-#'   
+#' @param extended if \code{TRUE}, the output contains more columns as the
+#'   minimum columns that are containd else: \code{event1}, \code{tBeg.merged},
+#'   \code{tEnd.merged}, \code{event2first}, \code{event2last}
+#' 
 getParallelEventNotEndingAfter <- function(
   events1, events2, eventRelations, extended = FALSE
 )
@@ -140,11 +143,9 @@ getParallelEventNotEndingAfter <- function(
     
   } else {
     
-    columns <- c(
+    kwb.utils::selectColumns(mergedEventInfo, c(
       "event1", "tBeg.merged", "tEnd.merged", "event2first", "event2last"
-    )
-    
-    mergedEventInfo[, columns]
+    ))
   }
 }
 
@@ -238,6 +239,7 @@ analyseEventRelations <- function(eventRelations)
 #' @param parallelEventInfo data frame as returned by
 #'   \code{\link{getParallelEventsInfo}}. If NULL, \emph{events} must be
 #'   specified.
+#' @param dbg if \code{TRUE}, debug messages are shown.
 #' 
 #' @examples 
 #' # Load example data set containing a list of rain events at different gauges

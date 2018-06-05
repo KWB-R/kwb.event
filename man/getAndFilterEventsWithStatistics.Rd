@@ -9,6 +9,27 @@ getAndFilterEventsWithStatistics(rainData, seriesName, eventSeparationTime,
   signalComparisonOperator = "gt", durationComparisonOperator = "gt",
   sumComparisonOperator = "gt", signalWidth = NA)
 }
+\arguments{
+\item{rainData}{passed to \code{\link{getEventsWithStatistics}}}
+
+\item{seriesName}{passed to \code{\link{getEventsWithStatistics}}}
+
+\item{eventSeparationTime}{passed to \code{\link{getEventsWithStatistics}}}
+
+\item{signalThreshold}{passed to \code{\link{getEventsWithStatistics}}}
+
+\item{durationThreshold}{passed to \code{\link{filterEventsWithStatistics}}}
+
+\item{sumThreshold}{passed to \code{\link{filterEventsWithStatistics}}}
+
+\item{signalComparisonOperator}{passed to \code{\link{getEventsWithStatistics}}}
+
+\item{durationComparisonOperator}{\code{\link{filterEventsWithStatistics}}}
+
+\item{sumComparisonOperator}{\code{\link{filterEventsWithStatistics}}}
+
+\item{signalWidth}{passed to \code{\link{getEventsWithStatistics}}}
+}
 \description{
 Get and filter Events with Statistics
 }

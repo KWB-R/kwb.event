@@ -6,6 +6,12 @@
 \usage{
 timeDifferencesToPauses(timeDifferences, signalWidth = 0)
 }
+\arguments{
+\item{timeDifferences}{numeric vector representing time differences}
+
+\item{signalWidth}{difference between two consecutive timesteps in the 
+original time series}
+}
 \value{
 data frame with columns \emph{pBefore}, \emph{pAfter}, containing the
   given \emph{timeDifferences}, shifted against each other by one row, i.e.

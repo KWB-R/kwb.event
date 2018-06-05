@@ -8,11 +8,21 @@ exampleEvents(signalWidth = 60, eventSeparationTime = 60 * signalWidth,
   from = "2015-06-11", to = "2015-06-12", signalDensity = 0.01, ...)
 }
 \arguments{
+\item{signalWidth}{see description in \code{\link{hsEvents}}}
+
+\item{eventSeparationTime}{see description of \code{evtSepTime} in
+\code{\link{hsEvents}}}
+
+\item{from}{first day as character string in format yyyy-mm-dd}
+
+\item{to}{last day as character string in format yyyy-mm-dd}
+
 \item{signalDensity}{fraction of all timestamps in a full sequence of
 timestamps that are to be selected randomly from the sequence and that are
 treated as the "signals" contributing to an event. Default: 0.01, i.e. one
 percent of a full sequence of timestamps are randomly selected, ordered and
-passed on to hsEvents that groups these "signal" timestamps into events}
+passed on to \code{\link{hsEvents}} that groups these "signal" timestamps
+into events}
 
 \item{\dots}{further arguments passed to \code{\link{hsEvents}}}
 }

@@ -4,11 +4,17 @@
 #' 
 #' Example events for testing purposes
 #' 
+#' @param signalWidth see description in \code{\link{hsEvents}}
+#' @param eventSeparationTime see description of \code{evtSepTime} in
+#'   \code{\link{hsEvents}}
+#' @param from first day as character string in format yyyy-mm-dd
+#' @param to last day as character string in format yyyy-mm-dd
 #' @param signalDensity fraction of all timestamps in a full sequence of
 #'   timestamps that are to be selected randomly from the sequence and that are
 #'   treated as the "signals" contributing to an event. Default: 0.01, i.e. one
 #'   percent of a full sequence of timestamps are randomly selected, ordered and
-#'   passed on to hsEvents that groups these "signal" timestamps into events
+#'   passed on to \code{\link{hsEvents}} that groups these "signal" timestamps
+#'   into events
 #' @param \dots further arguments passed to \code{\link{hsEvents}}
 #' 
 #' @examples 

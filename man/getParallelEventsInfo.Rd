@@ -4,7 +4,7 @@
 \alias{getParallelEventsInfo}
 \title{Information on Events in parallel}
 \usage{
-getParallelEventsInfo(eventLists, version = 1)
+getParallelEventsInfo(eventLists)
 }
 \arguments{
 \item{eventLists}{list of data frames, each of which represents a list of

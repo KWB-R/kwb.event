@@ -8,6 +8,8 @@ hsSigWidth(evts, dbg = FALSE)
 }
 \arguments{
 \item{evts}{data frame containing events (as e.g. provided by hsEvents)}
+
+\item{dbg}{if \code{TRUE}, debug messages are shown.}
 }
 \value{
 signal width in seconds

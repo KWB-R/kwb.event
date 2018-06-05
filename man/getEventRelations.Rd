@@ -22,6 +22,8 @@ numbers of the events which are compared to the events in column
 \item{parallelEventInfo}{data frame as returned by
 \code{\link{getParallelEventsInfo}}. If NULL, \emph{events} must be
 specified.}
+
+\item{dbg}{if \code{TRUE}, debug messages are shown.}
 }
 \description{
 relations between begin and end of events
