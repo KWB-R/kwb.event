@@ -1,19 +1,34 @@
 Package: kwb.event
-Authors@R: c(
-    person("Hauke", "Sonnenberg", , "hauke.sonnenberg@kompetenz-wasser.de", 
-           role = c("aut", "cre"), comment = c(ORCID = "0000-0001-9134-2871")),
-    person("Kompetenzzentrum Wasser Berlin gGmbH", role = c("cph")))
-Imports: kwb.plot, kwb.utils, kwb.datetime
-Remotes: 
-   github::kwb-r/kwb.plot,
-   github::kwb-r/kwb.utils,
-   github::kwb-r/kwb.datetime
+Title: Generate Events from Time Series and Work with Events
 Version: 0.3.0
+Authors@R: 
+    c(person(given = "Hauke",
+             family = "Sonnenberg",
+             role = c("aut", "cre"),
+             email = "hauke.sonnenberg@kompetenz-wasser.de",
+             comment = c(ORCID = "0000-0001-9134-2871")),
+      person(given = "Michael",
+             family = "Rustler",
+             role = "ctb",
+             email = "michael.rustler@kompetenz-wasser.de",
+             comment = c(ORCID = "0000-0003-0647-7726")),
+      person(given = "Kompetenzzentrum Wasser Berlin gGmbH (KWB)",
+             role = "cph"))
+Description: Functions to generate events from time series and
+    work with events.
 License: MIT + file LICENSE
-Title: Generate Events from Time Series and work with Events
-Description: Functions to generate events from time series and work with events.
-RoxygenNote: 6.0.1
-URL: https://github.com/kwb-r/kwb.event
-BugReports: https://github.com/kwb-r/kwb.event/issues
+URL: https://github.com/KWB-R/kwb.event
+BugReports: https://github.com/KWB-R/kwb.event/issues
+Encoding: UTF-8
+LazyData: true
 Suggests: 
+    covr,
     testthat
+Imports: 
+    kwb.utils,
+    kwb.datetime,
+    kwb.plot
+Remotes:  
+    github::kwb-r/kwb.utils,
+    github::kwb-r/kwb.datetime,
+    github::kwb-r/kwb.plot
