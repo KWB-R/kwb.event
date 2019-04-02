@@ -1,0 +1,195 @@
+## Daten vorbereiten
+
+```{r eval = FALSE}
+library(kwb.utils)
+
+# Zeile 5: //Uhrzeit verstellt
+content <- read.table(
+  file = "flow.txt",  
+  sep = "\t",        
+  dec = ",",
+  skip = 8,          
+  fill = TRUE,       
+  header = TRUE,     
+  stringsAsFactors = FALSE,
+  na.strings = c("//Uhrzeit verstellt", "#-1") # Ungueltige Werte vorgeben
+)
+
+renamed <- renameColumns(dframe = content, renames = list(
+  "F?llstand..m." = "H",
+  "Geschw...m.s." = "v",
+  "Durchfluss..l.s." = "Q"
+))
+
+subset <- renamed[, c("Datum", "Uhrzeit", "H", "v", "Q")]
+
+(dateAndTime <- paste(subset$Datum, subset$Uhrzeit))
+subset$Uhrzeit <- as.POSIXct(dateAndTime, format = "%d.%m.%Y %H:%M:%S", tz = "UTC")
+
+subset.2 <- subset[, -1] # ohne erste Spalte
+subset.2 <- removeColumns(subset, columnsToRemove = c("Datum", "v"))
+
+(empty <- is.na(subset.2$Uhrzeit)) # TRUE oder FALSE fuer jede einzelne Zeile
+subset.clean <- subset.2[! empty, ] 
+```
+
+Wir wollen aus den Gesamt-Durchflussdaten Durchflussereignisse bilden, wie
+machen wir das?
+
+Wir brauchen ein Kriterium für das Vorliegen eines Ereignisses, z.B. das
+Überschreiten von Schwellenwerten. Wir verwenden wieder den gesamten Datensatz
+als Testdatensatz
+
+## Ereignisbildung
+
+```{r eval = FALSE}
+testdata <- subset.clean
+myplot(testdata)
+
+# Anhaltspunkt fuer Schwellenwerte kann die Verteilung liefern, am einfachsten
+# angezeigt in Form eines Boxplot
+boxplot(testdata$H)
+
+# Anzeigen der Zeilen, in denen der Wasserstand groesser als ein Wert ist
+myplot(testdata[testdata$H > 0.05, ])
+
+# Anzeigen der Zeilen, in denen der Durchfluss groesser als ein Wert ist
+myplot(testdata[testdata$Q > 1, ])
+
+# Kombinierte Bedingung aus Wasserstand- und Durchflussueberschreitung
+
+# UND-Bedingung
+myplot(testdata[testdata$H > 0.05 & testdata$Q > 1, ])
+
+# ODER-Bedingung (senkrechter Strich auf der Tastatur mit AltGr + "<")
+myplot(testdata[testdata$H > 0.05 | testdata$Q > 1, ])
+
+# fuer die entsprechenden Zeitstempel muss dann geprueft werden, wie weit sie
+# voneinander entfernt sind
+condition <- testdata$H > 0.05 | testdata$Q > 1
+(timestamps <- testdata[condition, "Uhrzeit"])
+
+# aequivalent: testdata$Uhrzeit[condition]
+
+# Differenzen zwischen Zeitstempeln mit diff
+(timediffs <- diff(timestamps))
+
+# Uns interessieren die Zeilenindizes, an denen die gro?en Zeitdifferenzen
+# auftreten. Hier: groesser als zwei Stunden
+(indices <- which(timediffs > 120)) 
+
+timestamps[indices]     # Ereignisenden 
+timestamps[indices + 1] # Ereignisanfaenge
+
+# Im Grunde diese Schritte habe ich zusammengefasst in der Funktion hsEvents
+# im Paket kwb.event. Das Paket enthaelt viele andere Funktionen zu Ereignissen.
+# Am besten selbst mal gucken...
+library(kwb.event)
+
+events <- hsEvents(tUnit = "h",
+                   tseries = timestamps, # Zeitstempel an denen Ereignis-Bedingung erfuellt ist
+                   evtSepTime = 2*3600, # Trenndauer (Mindestpause zw. Ereignissen) in Sekunden
+                   signalWidth = 120 # Zeitintervall (in s), das ein Zeitstempel repraesentiert
+)
+```
+
+## Ereignisdarstellung
+
+Plot mit mehreren Graphiken und Seiten)
+
+```{r eval = FALSE}
+# Ausschneiden des Datenbereichs, der innerhalb eines Ereignisses liegt mit
+# hsGetEvent
+for (i in 1:nrow(events)) {
+  myplot(hsGetEvent(testdata, events, i))
+  title(paste("Ereignis", i, "von", events$tBeg[i], "bis", events$tEnd[i]))
+}
+```
+
+#	Eigenschaftsberechnung (Q-min, Q-max, Volumen)
+
+Wir wollen nun das Volumen (= Durchfluss mal Zeit) je Ereignis berechnen. Dies
+geht sehr gut mit der R-Funktion aggregate. Sie verlangt eine Spalte, in der
+jeweils zusammengehoerige Zeilen denselben Wert haben. Wir koennen zum Beispiel
+den Zeilen, die innerhalb Ereignis 1 liegen, eine 1 geben, denen die in Zeile 2
+liegen, eine 2, usw.
+
+```{r eval = FALSE}
+# Anlegen einer Spalte "eventNumber"
+testdata$eventNumber <- NA
+
+# Beispiel: erstes Ereignis
+eventNumber <- 1
+
+# liegen die Zeitstempel im Zeitfenster zwischen tBeg und tEnd des Ereignisses?
+condition <- hsTsIn(testdata$Uhrzeit, 
+                    tsFirst = events$tBeg[eventNumber], 
+                    tsLast = events$tEnd[eventNumber])
+
+# Zuweisen der Ereignisnummer in den Zeilen, die im Zeitfenster liegen
+testdata[condition, "eventNumber"] <- eventNumber
+
+testdata[condition, ]
+
+# Um das fuer alle Ereignisse zu machen, habe ich eine Funktion geschrieben
+testdata$eventNumber <- hsEventNumber(testdata$Uhrzeit, events)
+
+# Um das Ergebnis anzusehen, schreiben wir die Daten mal schnell eben in eine
+# csv-Datei:
+write.csv(testdata, file = "testdata_en.csv")
+write.csv2(testdata, file = "testdata_de.csv")
+
+# write.csv und write.csv2 rufen intern write.table auf. Sie belegen dabei
+# lediglich Spaltentrennzeichen und Dezimaltrennzeichen mit Komma und Punkt
+# (write.csv) bzw. mit Semikolon und Komma (write.csv2) vor.
+# Ausnahmsweise direktes Oeffnen der Dateien mit Excel...
+
+# Und nun kommt endlich die Funktion aggregate ins Spiel. Sie gruppiert alle
+# Zeilen, die denselben Wert in einer Spalte haben und wendet darauf eine
+# Funktion an (z.B. sum, min, max, mean, ...)
+(Q.sum <- aggregate(Q ~ eventNumber, data = testdata, FUN = sum))
+(Q.min <- aggregate(Q ~ eventNumber, data = testdata, FUN = min))
+(Q.max <- aggregate(Q ~ eventNumber, data = testdata, FUN = max))
+(Q.mean <- aggregate(Q ~ eventNumber, data = testdata, FUN = mean))
+
+# Bitte als vertrauensbildende Massnahme in Excel nachrechnen...
+
+# Daraus koennen wir nun eine kleine Statistiktabelle zusammenbauen mit merge. 
+# merge ist eine sehr wichtige Funktion, bitte selbstaendig darueber
+# informieren...
+# Leider kann man immer nur zwei Tabellen auf einmal "mergen"
+(merged1 <- merge(Q.sum, Q.min, by = "eventNumber", suffixes = c("sum", "min")))
+(merged2 <- merge(Q.max, Q.mean, by = "eventNumber", suffixes = c("max", "mean")))
+
+# by kann man weglassen, wenn es nur einen Spaltennamen gibt, der in beiden
+# Tabellen vorkommt
+(merged3 <- merge(merged1, merged2))
+
+# Nun noch die Ereignisinformation hinzu...
+# Dazu brauchen wir eine Spalte eventNumber:
+events$eventNumber <- 1:nrow(events)
+
+# Berechnung des Volumens aus der Summe der Durchfluesse
+merged <- merge(events, merged3)
+
+# V = Q * t
+merged$V <- merged$Qsum * 120 
+
+# Hm, leider nicht ganz das gleiche Ergebnis. Leider hat meine Funktion kein
+# Argument na.rm...
+
+# Es ist natuerlich auf die Einheiten zu achten! Hier wohl Q in L/s und V damit 
+# in Liter. An dieser Stelle habe ich vernachlaessigt, dass vorher garantiert
+# sein muss, dass auch wirklich alle Zeitstempel im Zweiminutentakt vorhanden
+# sind. Das kann aber mit den oben beschriebenen Methoden gemacht werden.
+merged
+
+# Hoffentlich einfacher:
+getEventStatistics(
+  dataFrame = testdata, 
+  seriesName = "Q", 
+  events = events, 
+  functions = c("sum", "mean", "min", "max", "number.na")
+)
+```
+
