@@ -19,16 +19,16 @@ Description: Functions to generate events from time series and
 License: MIT + file LICENSE
 URL: https://github.com/KWB-R/kwb.event
 BugReports: https://github.com/KWB-R/kwb.event/issues
-Encoding: UTF-8
-LazyData: true
-Suggests: 
-    covr,
-    testthat
 Imports: 
     kwb.utils,
     kwb.datetime,
     kwb.plot
-Remotes:  
+Suggests: 
+    covr,
+    testthat
+Remotes: 
     github::kwb-r/kwb.utils,
     github::kwb-r/kwb.datetime,
     github::kwb-r/kwb.plot
+Encoding: UTF-8
+LazyData: true
