@@ -14,3 +14,4 @@ LICENSE\.md$
 ^.travis\.yml$
 ^index\.md$
 ^R/\.init_package\.R$
+^\.github$
