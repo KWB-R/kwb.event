@@ -10,23 +10,27 @@
 
 
 <!-- jquery -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script>
+
+<!-- bootstrap-toc -->
+<link rel="stylesheet" href="../bootstrap-toc.css">
+<script src="../bootstrap-toc.js"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script>
 
 <!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -35,7 +39,7 @@
 
 <!-- docsearch -->
 <script src="../docsearch.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous" />
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
 
@@ -43,7 +47,6 @@
 
 <meta property="og:title" content="Begin/End Relations between Events — getEventRelations" />
 <meta property="og:description" content="relations between begin and end of events" />
-<meta name="twitter:card" content="summary" />
 
 
 
@@ -61,7 +64,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -83,7 +86,7 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -96,8 +99,8 @@
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/KWB-R/kwb.event">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/KWB-R/kwb.event/">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -129,8 +132,8 @@
     <p>relations between begin and end of events</p>
     </div>
 
-    <pre class="usage"><span class='fu'>getEventRelations</span>(<span class='no'>events</span>, <span class='no'>referenceName</span>, <span class='no'>partnerName</span>,
-  <span class='kw'>parallelEventInfo</span> <span class='kw'>=</span> <span class='kw'>NULL</span>, <span class='kw'>dbg</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>getEventRelations</span><span class='op'>(</span><span class='va'>events</span>, <span class='va'>referenceName</span>, <span class='va'>partnerName</span>,
+  parallelEventInfo <span class='op'>=</span> <span class='cn'>NULL</span>, dbg <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -167,18 +170,20 @@ specified.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># Load example data set containing a list of rain events at different gauges</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>rainEvents</span>)
-
-<span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/sprintf.html'>sprintf</a></span>(
-  <span class='st'>"Event lists available for: %s\n"</span>,
-   <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>rainEvents</span>), <span class='kw'>collapse</span> <span class='kw'>=</span> <span class='st'>", "</span>)
-))</div><div class='output co'>#&gt; Event lists available for: BlnX, BlnIX, BlnXI, Wil, Wila, Kar, ZhlI, StgI, Mal, Wit, ReiI</div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>rainEvents</span><span class='op'>)</span>
+  
+<span class='fu'><a href='https://rdrr.io/r/base/cat.html'>cat</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/sprintf.html'>sprintf</a></span><span class='op'>(</span>
+  <span class='st'>"Event lists available for: %s\n"</span>, 
+   <span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span><span class='op'>(</span><span class='va'>rainEvents</span><span class='op'>)</span>, collapse <span class='op'>=</span> <span class='st'>", "</span><span class='op'>)</span>
+<span class='op'>)</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; Event lists available for: BlnX, BlnIX, BlnXI, Wil, Wila, Kar, ZhlI, StgI, Mal, Wit, ReiI</div><div class='input'>  
 <span class='co'># How are rain events in BlnX related to rain events in Wil?</span>
-<span class='no'>eventRelations</span> <span class='kw'>&lt;-</span> <span class='fu'>getEventRelations</span>(
-  <span class='kw'>events</span> <span class='kw'>=</span> <span class='no'>rainEvents</span>,
-  <span class='kw'>referenceName</span> <span class='kw'>=</span> <span class='st'>"BlnX"</span>,
-  <span class='kw'>partnerName</span> <span class='kw'>=</span> <span class='st'>"Wil"</span>
-)</div><div class='output co'>#&gt; referenceEventNumber: 1 -&gt; 1  partner events found.
+<span class='va'>eventRelations</span> <span class='op'>&lt;-</span> <span class='fu'>getEventRelations</span><span class='op'>(</span>
+  events <span class='op'>=</span> <span class='va'>rainEvents</span>, 
+  referenceName <span class='op'>=</span> <span class='st'>"BlnX"</span>, 
+  partnerName <span class='op'>=</span> <span class='st'>"Wil"</span>
+<span class='op'>)</span>
+</div><div class='output co'>#&gt; referenceEventNumber: 1 -&gt; 1  partner events found.
 #&gt; referenceEventNumber: 2 -&gt; 1  partner events found.
 #&gt; referenceEventNumber: 3 -&gt; 1  partner events found.
 #&gt; referenceEventNumber: 4 -&gt; 1  partner events found.
@@ -189,9 +194,10 @@ specified.</p></td>
 #&gt; referenceEventNumber: 9 -&gt; 1  partner events found.
 #&gt; referenceEventNumber: 10</div><div class='output co'>#&gt; <span class='message'>No partner event at Wil found for event10 at BlnX</span></div><div class='output co'>#&gt; referenceEventNumber: 11 -&gt; 1  partner events found.
 #&gt; referenceEventNumber: 12 -&gt; 2  partner events found.
-#&gt; referenceEventNumber: 13</div><div class='output co'>#&gt; <span class='message'>No partner event at Wil found for event13 at BlnX</span></div><div class='output co'>#&gt; referenceEventNumber: 14</div><div class='output co'>#&gt; <span class='message'>No partner event at Wil found for event14 at BlnX</span></div><div class='output co'>#&gt; referenceEventNumber: 15</div><div class='output co'>#&gt; <span class='message'>No partner event at Wil found for event15 at BlnX</span></div><div class='output co'>#&gt; referenceEventNumber: 16</div><div class='output co'>#&gt; <span class='message'>No partner event at Wil found for event16 at BlnX</span></div><div class='input'>
+#&gt; referenceEventNumber: 13</div><div class='output co'>#&gt; <span class='message'>No partner event at Wil found for event13 at BlnX</span></div><div class='output co'>#&gt; referenceEventNumber: 14</div><div class='output co'>#&gt; <span class='message'>No partner event at Wil found for event14 at BlnX</span></div><div class='output co'>#&gt; referenceEventNumber: 15</div><div class='output co'>#&gt; <span class='message'>No partner event at Wil found for event15 at BlnX</span></div><div class='output co'>#&gt; referenceEventNumber: 16</div><div class='output co'>#&gt; <span class='message'>No partner event at Wil found for event16 at BlnX</span></div><div class='input'>  
 <span class='co'># Let's have a look at the output</span>
-<span class='no'>eventRelations</span></div><div class='output co'>#&gt;    event1 event2 beginRelation endRelation
+<span class='va'>eventRelations</span>
+</div><div class='output co'>#&gt;    event1 event2 beginRelation endRelation
 #&gt; 1       1      2  beginsBefore   endsAfter
 #&gt; 2       2      3   beginsAfter  endsBefore
 #&gt; 3       3      4  beginsBefore   endsAfter
@@ -203,75 +209,77 @@ specified.</p></td>
 #&gt; 9       9     10  beginsBefore   endsAfter
 #&gt; 10     11     12  beginsBefore  endsBefore
 #&gt; 11     12     13   beginsAfter  endsBefore
-#&gt; 12     12     14   beginsAfter  endsBefore</div><div class='input'>
+#&gt; 12     12     14   beginsAfter  endsBefore</div><div class='input'>  
 <span class='co'># Example 1: partner events that are fully containing the reference events</span>
-<span class='no'>isContaining</span> <span class='kw'>&lt;-</span> <span class='no'>eventRelations</span>$<span class='no'>beginRelation</span> <span class='kw'>==</span> <span class='st'>"beginsBefore"</span> <span class='kw'>&amp;</span>
-<span class='no'>eventRelations</span>$<span class='no'>endRelation</span> <span class='kw'>==</span> <span class='st'>"endsAfter"</span>
-
+<span class='va'>isContaining</span> <span class='op'>&lt;-</span> <span class='va'>eventRelations</span><span class='op'>$</span><span class='va'>beginRelation</span> <span class='op'>==</span> <span class='st'>"beginsBefore"</span> <span class='op'>&amp;</span> 
+<span class='va'>eventRelations</span><span class='op'>$</span><span class='va'>endRelation</span> <span class='op'>==</span> <span class='st'>"endsAfter"</span>
+  
 <span class='co'># The following table relates numbers of "partner" events (event2) to numbers</span>
 <span class='co'># of "reference" events (event1) for each case in which a reference event is</span>
 <span class='co'># fully contained in a partner event.</span>
-<span class='no'>containing</span> <span class='kw'>&lt;-</span> <span class='no'>eventRelations</span>[<span class='no'>isContaining</span>, ]
-
+<span class='va'>containing</span> <span class='op'>&lt;-</span> <span class='va'>eventRelations</span><span class='op'>[</span><span class='va'>isContaining</span>, <span class='op'>]</span>
+  
 <span class='co'># Let's check this graphically:</span>
-
+  
 <span class='co'># Define plot matrix of two rows and one column</span>
-<span class='no'>old.par</span> <span class='kw'>&lt;-</span> <span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='kw'>mfrow</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>2</span>, <span class='fl'>1</span>))
-
-<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span>(
-  <span class='kw'>events</span> <span class='kw'>=</span> <span class='no'>rainEvents</span>$<span class='no'>BlnX</span>[],
-  <span class='kw'>indicate</span> <span class='kw'>=</span> <span class='no'>containing</span>$<span class='no'>event1</span>,
-  <span class='kw'>ylim</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>2.8</span>),
-  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"BlnX"</span>,
-  <span class='kw'>indicationColour</span> <span class='kw'>=</span> <span class='st'>"blue"</span>
-)
-
-<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span>(
-  <span class='no'>rainEvents</span>$<span class='no'>Wil</span>,
-  <span class='kw'>indicate</span> <span class='kw'>=</span> <span class='no'>containing</span>$<span class='no'>event2</span>,
-  <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>y1</span> <span class='kw'>=</span> <span class='fl'>1.8</span>,
-  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Wil"</span>
-)
-
-<span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/title.html'>title</a></span>(<span class='st'>"Events at Wil (red), fully containing events at BlnX (blue)"</span>)
-
+<span class='va'>old.par</span> <span class='op'>&lt;-</span> <span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span>mfrow <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>2</span>, <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span>
+  
+<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span><span class='op'>(</span>
+  events <span class='op'>=</span> <span class='va'>rainEvents</span><span class='op'>$</span><span class='va'>BlnX</span><span class='op'>[</span><span class='op'>]</span>, 
+  indicate <span class='op'>=</span> <span class='va'>containing</span><span class='op'>$</span><span class='va'>event1</span>, 
+  ylim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2.8</span><span class='op'>)</span>, 
+  title <span class='op'>=</span> <span class='st'>"BlnX"</span>,
+  indicationColour <span class='op'>=</span> <span class='st'>"blue"</span>  
+<span class='op'>)</span>
+  
+<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span><span class='op'>(</span>
+  <span class='va'>rainEvents</span><span class='op'>$</span><span class='va'>Wil</span>, 
+  indicate <span class='op'>=</span> <span class='va'>containing</span><span class='op'>$</span><span class='va'>event2</span>, 
+  add <span class='op'>=</span> <span class='cn'>TRUE</span>, 
+  y1 <span class='op'>=</span> <span class='fl'>1.8</span>, 
+  title <span class='op'>=</span> <span class='st'>"Wil"</span>
+<span class='op'>)</span>
+  
+<span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/title.html'>title</a></span><span class='op'>(</span><span class='st'>"Events at Wil (red), fully containing events at BlnX (blue)"</span><span class='op'>)</span>
+  
 <span class='co'># Example 2: partner events that are starting before the reference event starts</span>
 <span class='co'># and ending before the reference event ends</span>
-<span class='no'>isOverlappingLeft</span> <span class='kw'>&lt;-</span> <span class='no'>eventRelations</span>$<span class='no'>beginRelation</span> <span class='kw'>==</span> <span class='st'>"beginsBefore"</span> <span class='kw'>&amp;</span>
-<span class='no'>eventRelations</span>$<span class='no'>endRelation</span> <span class='kw'>==</span> <span class='st'>"endsBefore"</span>
-
-<span class='no'>overlappingLeft</span> <span class='kw'>&lt;-</span> <span class='no'>eventRelations</span>[<span class='no'>isOverlappingLeft</span>, ]
-
+<span class='va'>isOverlappingLeft</span> <span class='op'>&lt;-</span> <span class='va'>eventRelations</span><span class='op'>$</span><span class='va'>beginRelation</span> <span class='op'>==</span> <span class='st'>"beginsBefore"</span> <span class='op'>&amp;</span> 
+<span class='va'>eventRelations</span><span class='op'>$</span><span class='va'>endRelation</span> <span class='op'>==</span> <span class='st'>"endsBefore"</span>
+  
+<span class='va'>overlappingLeft</span> <span class='op'>&lt;-</span> <span class='va'>eventRelations</span><span class='op'>[</span><span class='va'>isOverlappingLeft</span>, <span class='op'>]</span>
+  
 <span class='co'># Again, check this graphically:</span>
-<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span>(
-  <span class='kw'>events</span> <span class='kw'>=</span> <span class='no'>rainEvents</span>$<span class='no'>BlnX</span>[],
-  <span class='kw'>indicate</span> <span class='kw'>=</span> <span class='no'>overlappingLeft</span>$<span class='no'>event1</span>,
-  <span class='kw'>ylim</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>1</span>, <span class='fl'>2.8</span>),
-  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"BlnX"</span>,
-  <span class='kw'>indicationColour</span> <span class='kw'>=</span> <span class='st'>"blue"</span>
-)</div><div class='input'>
-<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span>(
-  <span class='no'>rainEvents</span>$<span class='no'>Wil</span>,
-  <span class='kw'>indicate</span> <span class='kw'>=</span> <span class='no'>overlappingLeft</span>$<span class='no'>event2</span>,
-  <span class='kw'>add</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>y1</span> <span class='kw'>=</span> <span class='fl'>1.8</span>,
-  <span class='kw'>title</span> <span class='kw'>=</span> <span class='st'>"Wil"</span>
-)</div><div class='input'>
-<span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/title.html'>title</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span>(
+<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span><span class='op'>(</span>
+  events <span class='op'>=</span> <span class='va'>rainEvents</span><span class='op'>$</span><span class='va'>BlnX</span><span class='op'>[</span><span class='op'>]</span>, 
+  indicate <span class='op'>=</span> <span class='va'>overlappingLeft</span><span class='op'>$</span><span class='va'>event1</span>, 
+  ylim <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>1</span>, <span class='fl'>2.8</span><span class='op'>)</span>, 
+  title <span class='op'>=</span> <span class='st'>"BlnX"</span>,
+  indicationColour <span class='op'>=</span> <span class='st'>"blue"</span>  
+<span class='op'>)</span>
+</div><div class='input'>  
+<span class='fu'><a href='ganttPlotEvents.html'>ganttPlotEvents</a></span><span class='op'>(</span>
+  <span class='va'>rainEvents</span><span class='op'>$</span><span class='va'>Wil</span>, 
+  indicate <span class='op'>=</span> <span class='va'>overlappingLeft</span><span class='op'>$</span><span class='va'>event2</span>, 
+  add <span class='op'>=</span> <span class='cn'>TRUE</span>, 
+  y1 <span class='op'>=</span> <span class='fl'>1.8</span>, 
+  title <span class='op'>=</span> <span class='st'>"Wil"</span>
+<span class='op'>)</span>
+</div><div class='input'>  
+<span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/title.html'>title</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/paste.html'>paste</a></span><span class='op'>(</span>
   <span class='st'>"Events at Wil (red), starting before the start and ending before"</span>,
   <span class='st'>"the end\nof the events at BlnX (blue)"</span>
-))</div><div class='img'><img src='getEventRelations-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='getEventRelations-1.png' alt='' width='700' height='433' /></div><div class='input'>  
 <span class='co'># Reset graphical parameters</span>
-<span class='kw pkg'>graphics</span><span class='kw ns'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span>(<span class='no'>old.par</span>)</div></pre>
+<span class='fu'>graphics</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/r/graphics/par.html'>par</a></span><span class='op'>(</span><span class='va'>old.par</span><span class='op'>)</span>  
+  
+</div></pre>
   </div>
-  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
-    <h2>Contents</h2>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#arguments">Arguments</a></li>
-      <li><a href="#examples">Examples</a></li>
-    </ul>
-
+  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
+    <nav id="toc" data-toggle="toc" class="sticky-top">
+      <h2 data-toc-skip>Contents</h2>
+    </nav>
   </div>
 </div>
 
@@ -282,7 +290,7 @@ specified.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
