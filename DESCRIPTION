@@ -1,6 +1,6 @@
 Package: kwb.event
 Title: Generate Events from Time Series and Work with Events
-Version: 0.3.0
+Version: 0.3.0.9000
 Authors@R: 
     c(person(given = "Hauke",
              family = "Sonnenberg",

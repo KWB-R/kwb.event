@@ -81,7 +81,7 @@ eventsByState <- function(
   }
   
   # "events" (= index intervals from iBeg to iEnd) of changing section numbers
-  events <- hsEventsOnChange(states, include.value = TRUE)
+  events <- eventsOnChange(states, include.value = TRUE)
   
   # indices of intermediate states (state == "")
   transition <- which(! (events$value %in% clearStates))
@@ -598,7 +598,7 @@ hsEventsToUnit <- function(evts, tUnit)
 #'   \emph{tEnd} indicating first and last timestamp of the event and \emph{dur}
 #'   indicating the event duration in seconds.
 #'   
-#' @seealso \code{\link{hsEventsOnChange}}
+#' @seealso \code{\link{eventsOnChange}}
 #' 
 hsEvents <- function(
   tseries, evtSepTime, signalWidth, tUnit = "s", pause = TRUE, evtSepOp = "gt",
@@ -840,7 +840,7 @@ timeDifferencesToPauses <- function(timeDifferences, signalWidth = 0)
   )  
 }
 
-# hsEventsOnChange -------------------------------------------------------------
+# eventsOnChange -------------------------------------------------------------
 
 #' Changes in Value Vector to Events
 #' 
@@ -868,7 +868,7 @@ timeDifferencesToPauses <- function(timeDifferences, signalWidth = 0)
 #' @seealso \code{\link{hsEvents}}
 #' 
 #' @examples 
-#' hsEventsOnChange(c(1,2,2,3,4,4,4,5))
+#' eventsOnChange(c(1,2,2,3,4,4,4,5))
 #'   
 #' # Ouput: list of five events, i.e. there are four changes of 
 #' #        the value in the given vector.
@@ -880,34 +880,27 @@ timeDifferencesToPauses <- function(timeDifferences, signalWidth = 0)
 #' # 4    5    7
 #' # 5    8    8
 #'   
-#' hsEventsOnChange(c(1, 2, 2, 3, 4, 4, 4, 5), numberOnly = TRUE) ## 5 (events)
+#' eventsOnChange(c(1, 2, 2, 3, 4, 4, 4, 5), numberOnly = TRUE) ## 5 (events)
 #'   
-hsEventsOnChange <- function(x, numberOnly = FALSE, include.value = FALSE) 
+eventsOnChange <- function(x, numberOnly = FALSE, include.value = FALSE) 
 {  
-  n <- length(x)
-  
-  changeIndex <- which(x[1:(n-1)] != x[2:n]) + 1 # Indices where changes occur
+  changes <- kwb.utils::findChanges(x)
   
   # If desired return the number of events only
   if (numberOnly) {
-    
-    return(length(changeIndex) + 1)
+    return(nrow(changes))
   }
   
+  changes <- kwb.utils::renameColumns(changes, list(
+    starts_at = "iBeg", 
+    ends_at = "iEnd"
+  ))
+  
   if (include.value) {
-    
-    data.frame(
-      iBeg = c(1, changeIndex), 
-      iEnd = c(changeIndex - 1, n),
-      value = x[c(1, changeIndex)]
-    )
-  } else {
-    
-    data.frame(
-      iBeg = c(1, changeIndex), 
-      iEnd = c(changeIndex - 1, n)
-    )
-  }
+    return(changes)
+  } 
+  
+  kwb.utils::removeColumns(changes, "value")
 }
 
 # hsGetEvent -------------------------------------------------------------------
