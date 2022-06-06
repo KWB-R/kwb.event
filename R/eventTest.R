@@ -90,5 +90,5 @@ exampleEvents <- function(
 
 .deleteItemsRandomly <- function(x, n)
 {
-  sort(x[-sample(1:length(x), n)])
+  sort(x[-sample(seq_along(x), n)])
 }
