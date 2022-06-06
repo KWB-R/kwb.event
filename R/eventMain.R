@@ -345,7 +345,7 @@ getXLimFromEventLists <- function(eventLists)
 {
   n <- length(eventLists)
   
-  for (i in 1:n) {
+  for (i in seq_len(n)) {
     
     events <- eventLists[[i]]
     
@@ -373,7 +373,7 @@ getXLimFromEventLists <- function(eventLists)
 #' @param tstamps vector of timestamps
 #' @param events event information as returned by \code{\link{hsEvents}}
 #' @param eventNumbers optional vector of event numbers with as many elements as
-#'   there are rows in \emph{tstamps}. Default: 1:nrow(\emph{events})
+#'   there are rows in \emph{tstamps}. Default: \code{seq_len(nrow(events))}
 #' @param commaSeparated if there are timestamps taht belong to more than one
 #'   event, the default behaviour (commaSeparated = FALSE) of this function is
 #'   to return a list with each list element being a vector of integer numbers
@@ -385,7 +385,7 @@ getXLimFromEventLists <- function(eventLists)
 #'   second to both event 1 and 2, and the third to event 2.
 #' 
 hsEventNumber <- function(
-  tstamps, events, eventNumbers = 1:nrow(events), commaSeparated = FALSE
+  tstamps, events, eventNumbers = seq_len(nrow(events)), commaSeparated = FALSE
 )
 {
   ## number of events
@@ -412,7 +412,7 @@ hsEventNumber <- function(
   
   tstamps <- as.double(tstamps)
   
-  for (i in 1:nevts) {
+  for (i in seq_len(nevts)) {
     
     indices <- which(
       "&"(tstamps >= as.double(events$tBeg[i]), 

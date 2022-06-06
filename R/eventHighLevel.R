@@ -290,7 +290,7 @@ getEventStatistics <- function(
   
   statistics <- data.frame(event = eventNumbers)
   
-  for (i in seq_len(length(functions))) {
+  for (i in seq_along(functions)) {
     
     FUN <- functions[i]
     
