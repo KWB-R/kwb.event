@@ -6,9 +6,8 @@
 #'   previous event)
 #' 
 #' @param events event list as returned by \code{\link{hsEvents}}
-#' 
 #' @return TRUE if there are overlapping events, otherwise FALSE
-#' 
+#' @export
 #' @examples 
 #' events <- kwb.event::exampleEvents()
 #'   
@@ -56,7 +55,7 @@ overlapping <- function(events)
 #' @param extended if \code{TRUE}, the output contains more columns as the
 #'   minimum columns that are containd else: \code{event1}, \code{tBeg.merged},
 #'   \code{tEnd.merged}, \code{event2first}, \code{event2last}
-#' 
+#' @export
 getParallelEventNotEndingAfter <- function(
   events1, events2, eventRelations, extended = FALSE
 )
@@ -155,7 +154,7 @@ getParallelEventNotEndingAfter <- function(
 #' 
 #' @param eventRelations data frame as returned by
 #'   \code{\link{getEventRelations}}
-#' 
+#' @export
 analyseEventRelations <- function(eventRelations)
 {
   # bring relations into order
@@ -240,7 +239,7 @@ analyseEventRelations <- function(eventRelations)
 #'   \code{\link{getParallelEventsInfo}}. If NULL, \emph{events} must be
 #'   specified.
 #' @param dbg if \code{TRUE}, debug messages are shown.
-#' 
+#' @export
 #' @examples 
 #' # Load example data set containing a list of rain events at different gauges
 #' data(rainEvents)
@@ -385,7 +384,7 @@ getEventRelations <- function(
 #'   compared to the event given in \emph{event1}. Columns \emph{tBeg} (begin of
 #'   event), \emph{tEnd} (end of event) and \emph{event} (event number/ID) are
 #'   required.
-#' 
+#' @export
 eventRelation <- function(event1, events2) 
 {
   x <- data.frame(

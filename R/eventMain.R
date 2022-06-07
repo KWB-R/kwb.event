@@ -18,10 +18,9 @@
 #'   Default: 1
 #' @param out.state value in \emph{states} indicating the state "out of event".
 #'   Default: 0
-#'   
 #' @return event characteristics (begin, end, duration, ...) in a data frame, as
 #'   returned by \code{\link{hsEvents}}
-#' 
+#' @export
 #' @examples 
 #'   
 #' # Generate random timestamps
@@ -115,9 +114,8 @@ eventsByState <- function(
 #' add event number (= real row number) in column \emph{event}
 #' 
 #' @param events event information as returned by \code{\link{hsEvents}}
-#' 
 #' @return data frame with (additional) column \emph{event}
-#' 
+#' @export
 renumberEvents <- function(events)
 {
   events$event <- seq_len(nrow(events))
@@ -133,7 +131,7 @@ renumberEvents <- function(events)
 #' 
 #' @param events data frame with columns \emph{tBeg} (begin of event) and
 #'   \emph{tEnd} (end of event), representing events
-#'   
+#' @export
 invertedEvents <- function(events)
 {
   .checkEvents(events)
@@ -160,7 +158,7 @@ invertedEvents <- function(events)
 #' 
 #' @return vector of indices representing the positions of the events in 
 #'   \emph{events} in which \emph{event} is fully contained
-#' 
+#' @export
 indicesOfEventsContainingEvent <- function(events, event)
 {
   .checkEvents(events)
@@ -179,7 +177,7 @@ indicesOfEventsContainingEvent <- function(events, event)
 #' 
 #' @return vector of indices representing the positions of the events in 
 #'   \emph{events} that are fully contained in \emph{event}
-#' 
+#' @export
 indicesOfEventsContainedInEvent <- function(events, event)
 {
   .checkEvents(events)
@@ -204,12 +202,11 @@ indicesOfEventsContainedInEvent <- function(events, event)
 #'   after the end of the event.
 #' @param absolute if TRUE, the context values are interpreted as absolute
 #'   values (seconds) instead of fractions of the event duration. Default: FALSE
-#'   
 #' @return data frame with columns \emph{tBeg} and \emph{tEnd}, taken from 
 #'   \emph{events} and possibly reduced (tBeg) and/or extended (tEnd) by a 
 #'   fraction of the event duration (read from column \emph{dur} in 
 #'   \emph{events}).
-#' 
+#' @export
 eventLimits <- function(events, context = c(0, 0), absolute = FALSE)
 {
   if (absolute) {
@@ -319,10 +316,9 @@ eventLimits <- function(events, context = c(0, 0), absolute = FALSE)
 #' puts tBeg and tEnd of event into a vector of two POSIXct elements
 #' 
 #' @param event data frame with columns \emph{tBeg}, \emph{tEnd}
-#'   
 #' @return vector of two elements: \emph{tBeg} and \emph{tEnd} from
 #'   \emph{event}, both converted to UTC timezone
-#'   
+#' @export
 eventToXLim <- function(event)
 {
   kwb.datetime::toUTC(c(event$tBeg, event$tEnd))
@@ -340,7 +336,7 @@ eventToXLim <- function(event)
 #' @return vector of two elements: the first begin (minimum of tBeg) and the
 #'   last end (maximum of tEnd), found in any of the event data frames given in 
 #'   \emph{eventLists}
-#'   
+#' @export
 getXLimFromEventLists <- function(eventLists)
 {
   n <- length(eventLists)
@@ -383,7 +379,7 @@ getXLimFromEventLists <- function(eventLists)
 #'   more than one event number are separated by a comma. E.g. c("1", "1,2",
 #'   "2") would be returned if the first timestamp belongs to event 1, the
 #'   second to both event 1 and 2, and the third to event 2.
-#' 
+#' @export
 hsEventNumber <- function(
   tstamps, events, eventNumbers = seq_len(nrow(events)), commaSeparated = FALSE
 )
@@ -472,9 +468,8 @@ hsEventNumber <- function(
 #' 
 #' @param evts data frame containing events (as e.g. provided by hsEvents)
 #' @param dbg if \code{TRUE}, debug messages are shown.
-#' 
 #' @return signal width in seconds
-#' 
+#' @export
 hsSigWidth <- function(evts, dbg = FALSE) 
 {
   ## get names of required columns
@@ -524,10 +519,9 @@ hsSigWidth <- function(evts, dbg = FALSE)
 #' 
 #' @param evts data frame representing events as provided by hsEvents
 #' @param tUnit time unit to which durations and pauses shall be converted.
-#'   
 #' @return data frame containing events with durations (and pauses) given in the
 #'   new time unit.
-#'   
+#' @export
 hsEventsToUnit <- function(evts, tUnit)
 {
   # current time unit must be given
@@ -597,9 +591,8 @@ hsEventsToUnit <- function(evts, tUnit)
 #'   and last index of the event in the \emph{tseries} vector, \emph{tBeg} and 
 #'   \emph{tEnd} indicating first and last timestamp of the event and \emph{dur}
 #'   indicating the event duration in seconds.
-#'   
 #' @seealso \code{\link{eventsOnChange}}
-#' 
+#' @export
 hsEvents <- function(
   tseries, evtSepTime, signalWidth, tUnit = "s", pause = TRUE, evtSepOp = "gt",
   dbg = FALSE, check.sorting = FALSE
@@ -689,7 +682,7 @@ hsEvents <- function(
 #' @param tBeg timestamps representing the event begins
 #' @param tEnd timestamps representing the event ends
 #' @param signalWidth see description in \code{\link{hsEvents}}
-#' 
+#' @export
 eventDuration <- function(tBeg, tEnd, signalWidth)
 {
   as.double(tEnd) - as.double(tBeg) + signalWidth
@@ -706,7 +699,7 @@ eventDuration <- function(tBeg, tEnd, signalWidth)
 #' @param pause if TRUE, pauses before and after the events are calculated
 #' @param timeDifferences if time differences have been calculated beforehand,
 #'   these may be given here (in seconds)
-#' 
+#' @export
 toEvents <- function(
   events, signalWidth = .getSignalWidth(events, default = NA), timeUnit = "s",
   pause = TRUE, timeDifferences = NULL
@@ -798,10 +791,9 @@ toEvents <- function(
 #' @param signalWidth see description in \code{\link{hsEvents}}
 #' @param timeDifferences if time differences have been calculated beforehand,
 #'   these may be given here (in seconds)
-#'   
 #' @return data frame with columns \emph{pBefore}, \emph{pEnd} with the pauses 
 #'   between the given \emph{events}, in seconds
-#' 
+#' @export
 eventPauses <- function(
   events, signalWidth = .getSignalWidth(events), timeDifferences = NULL
 )
@@ -826,12 +818,11 @@ eventPauses <- function(
 #' @param timeDifferences numeric vector representing time differences
 #' @param signalWidth difference between two consecutive timesteps in the 
 #'   original time series
-#' 
 #' @return data frame with columns \emph{pBefore}, \emph{pAfter}, containing the
 #'   given \emph{timeDifferences}, shifted against each other by one row, i.e.
 #'   the first element in column \emph{pBefore} and the last element in column 
 #'   \emph{pAfter} will be NA.
-#' 
+#' @export
 timeDifferencesToPauses <- function(timeDifferences, signalWidth = 0)
 {
   data.frame(
@@ -854,7 +845,6 @@ timeDifferencesToPauses <- function(timeDifferences, signalWidth = 0)
 #' @param include.value if TRUE and \emph{numberOnly} is FALSE, the returned
 #'   data frame will contain a column \emph{value} containing the value that was
 #'   found in each index section between \emph{iBeg} and \emph{iEnd}.
-#'   
 #' @return Per default (\emph{numberOnly} = FALSE) a data frame is returned with
 #'   as many rows as \dQuote{events} were found in vector \emph{x}. As long as
 #'   the value in \emph{x} does not change from one index to the next, it is 
@@ -864,9 +854,8 @@ timeDifferencesToPauses <- function(timeDifferences, signalWidth = 0)
 #'   respectively, in \emph{x} that build the event. If \emph{numberOnly} is 
 #'   TRUE the number of \dQuote{events} is returned, that is one plus the number
 #'   of changes in the value of \emph{x} from its first to its last element.
-#' 
 #' @seealso \code{\link{hsEvents}}
-#' 
+#' @export
 #' @examples 
 #' eventsOnChange(c(1,2,2,3,4,4,4,5))
 #'   
@@ -917,10 +906,9 @@ eventsOnChange <- function(x, numberOnly = FALSE, include.value = FALSE)
 #'   by comparing the timestamps in tSeries with the begin and end timestamps
 #'   given in columns \emph{tBeg} and \emph{tEnd} of \emph{events}. Defaults to
 #'   TRUE if \emph{events} contains columns \emph{iBeg} and \emph{iEnd}
-#'   
 #' @return rows of \emph{tSeries} belonging to the event numbers listed in 
 #'   \emph{evtnums}
-#'   
+#' @export
 hsGetEvent <- function(tSeries, events, evtnums, useIndex = FALSE)
 { 
   .checkEvents(events, requiredColumns = .eventColumns(useIndex = useIndex))

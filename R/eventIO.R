@@ -9,7 +9,7 @@
 #' @param timezone timezone to which the timestamps are to be converted.
 #'   Default: "UTC"
 #' @param \dots arguments passed to \code{\link{readEventsFromFile}}
-#' 
+#' @export
 readEventFilesFromDirectory <- function(
   event.dir, prefix = "events", timezone = "UTC", ...
 )
@@ -54,9 +54,8 @@ readEventFilesFromDirectory <- function(
 #'   non-comment-line). Default: FALSE. If the file contains a header line, it
 #'   must contain the column captions "tBeg" and "tEnd" (begin and end
 #'   timestamps of the event).
-#'   
 #' @return data frame with columns \emph{tBeg} and \emph{tEnd} (POSIXct)
-#' 
+#' @export
 readEventsFromFile <- function(file, timezone = "UTC",header = FALSE)
 {
   x <- utils::read.table(
