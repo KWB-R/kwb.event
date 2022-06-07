@@ -4,8 +4,12 @@
 \alias{readEventFilesFromDirectory}
 \title{Read Event Files from Directory}
 \usage{
-readEventFilesFromDirectory(event.dir, prefix = "events", timezone = "UTC",
-  ...)
+readEventFilesFromDirectory(
+  event.dir,
+  prefix = "events",
+  timezone = "UTC",
+  ...
+)
 }
 \arguments{
 \item{event.dir}{full path to directory containing event definition files}

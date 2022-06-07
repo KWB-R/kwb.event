@@ -4,8 +4,14 @@
 \alias{ganttPlotEventLists}
 \title{Gantt Plot of Event Lists}
 \usage{
-ganttPlotEventLists(eventLists, margin.top = 0.8, time.format = NULL,
-  n.xticks = 10, showLabels = TRUE, ...)
+ganttPlotEventLists(
+  eventLists,
+  margin.top = 0.8,
+  time.format = NULL,
+  n.xticks = 10,
+  showLabels = TRUE,
+  ...
+)
 }
 \arguments{
 \item{eventLists}{list of data frames containing events (containing columns

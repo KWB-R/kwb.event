@@ -4,8 +4,11 @@
 \alias{eventPauses}
 \title{Pauses between Events in Seconds}
 \usage{
-eventPauses(events, signalWidth = .getSignalWidth(events),
-  timeDifferences = NULL)
+eventPauses(
+  events,
+  signalWidth = .getSignalWidth(events),
+  timeDifferences = NULL
+)
 }
 \arguments{
 \item{events}{event information as returned by \code{\link{hsEvents}}}

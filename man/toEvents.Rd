@@ -4,8 +4,13 @@
 \alias{toEvents}
 \title{Convert to Data Frame of Events}
 \usage{
-toEvents(events, signalWidth = .getSignalWidth(events, default = NA),
-  timeUnit = "s", pause = TRUE, timeDifferences = NULL)
+toEvents(
+  events,
+  signalWidth = .getSignalWidth(events, default = NA),
+  timeUnit = "s",
+  pause = TRUE,
+  timeDifferences = NULL
+)
 }
 \arguments{
 \item{events}{data frame with columns \emph{tBeg} (event begins) and

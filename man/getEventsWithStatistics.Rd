@@ -4,10 +4,16 @@
 \alias{getEventsWithStatistics}
 \title{Get Events with Statistics}
 \usage{
-getEventsWithStatistics(rainData, seriesName, eventSeparationTime,
-  signalThreshold = 0, signalComparisonOperator = "gt",
-  eventSeparationOperator = "gt", functions = c("sum", "mean", "min", "max",
-  "number.na", "length"), signalWidth = NA)
+getEventsWithStatistics(
+  rainData,
+  seriesName,
+  eventSeparationTime,
+  signalThreshold = 0,
+  signalComparisonOperator = "gt",
+  eventSeparationOperator = "gt",
+  functions = c("sum", "mean", "min", "max", "number.na", "length"),
+  signalWidth = NA
+)
 }
 \arguments{
 \item{rainData}{data frame with time stamps in the first column and rain

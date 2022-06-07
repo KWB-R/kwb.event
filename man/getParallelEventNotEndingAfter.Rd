@@ -4,8 +4,12 @@
 \alias{getParallelEventNotEndingAfter}
 \title{"Parallel" Events}
 \usage{
-getParallelEventNotEndingAfter(events1, events2, eventRelations,
-  extended = FALSE)
+getParallelEventNotEndingAfter(
+  events1,
+  events2,
+  eventRelations,
+  extended = FALSE
+)
 }
 \arguments{
 \item{events1}{data frame containing the reference events, e.g. discharge

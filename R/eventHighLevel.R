@@ -12,7 +12,7 @@
 #' @param durationComparisonOperator \code{\link{filterEventsWithStatistics}}
 #' @param sumComparisonOperator \code{\link{filterEventsWithStatistics}}
 #' @param signalWidth passed to \code{\link{getEventsWithStatistics}}
-#' 
+#' @export
 getAndFilterEventsWithStatistics <- function(
   rainData, 
   seriesName, 
@@ -68,7 +68,7 @@ getAndFilterEventsWithStatistics <- function(
 #' @param signalComparisonOperator Operator to be applied when comparing rain
 #'   values with signalThreshold. Must be one of "gt" (greater than) or "ge"
 #'   greater than or equal. Default: "gt"
-#' 
+#' @export
 getEventsWithStatisticsForMultipleSeries <- function(
   rainData, 
   eventSeparationTime,
@@ -123,7 +123,7 @@ getEventsWithStatisticsForMultipleSeries <- function(
 #' @param eventSeparationOperator passed to \code{\link{getEvents}}
 #' @param functions passed to \code{\link{getEventStatistics}}
 #' @param signalWidth passed to \code{\link{getEvents}}
-#' 
+#' @export
 getEventsWithStatistics <- function(
   rainData,
   seriesName,
@@ -193,7 +193,7 @@ getEventsWithStatistics <- function(
 #'   one row in \code{rainData}) in seconds
 #' @param column.time name of the column containing the time. Default: Name of
 #'   the first column
-#'   
+#' @export
 getEvents <- function(
   rainData, seriesName, signalThreshold = 0, signalComparisonOperator = "gt",
   eventSeparationTime = 6 * 3600, eventSeparationOperator = "gt", 
@@ -261,10 +261,9 @@ getEvents <- function(
 #' @param functions define statistical functions
 #' @param eventNumbers vector of same length as \emph{events} has rows, giving
 #'   the numbers that identify the events. Default: 1:nrow(\emph{events})
-#'   
 #' @return data frame with event number in first column \emph{event} and
 #'   statistical values in further columns.
-#'   
+#' @export
 getEventStatistics <- function(
   dataFrame, seriesName, events, 
   functions = c("sum", "mean", "min", "max", "number.na"),
@@ -322,7 +321,7 @@ getEventStatistics <- function(
 #' @param sumComparisonOperator Operator to be applied when comparing the 'sum'
 #'   of values within the events with \emph{sumThreshold}. Must be one of "gt"
 #'   (greater than) or "ge" greater than or equal. Default: "gt"
-#' 
+#' @export
 filterEventsWithStatistics <- function(
   eventData, durationThreshold = 0, durationComparisonOperator = "gt",
   sumThreshold = 0, sumComparisonOperator = "gt"
@@ -350,7 +349,7 @@ filterEventsWithStatistics <- function(
 #' 
 #' @param \dots arguments, given as \code{key = value} pairs, to be checked for 
 #'   validity
-#' 
+#' @export
 validateEventFunctionArguments <- function(...)
 {
   arguments <- list(...) 
@@ -394,7 +393,7 @@ validateEventFunctionArguments <- function(...)
 #'   are \emph{greater than} the \code{threshold}, otherwise it is checked
 #'   whether the \code{values} are \code{greater than or equal to} the
 #'   \code{threshold}
-#' 
+#' @export
 whichAboveThreshold <- function(values, threshold, comparisonOperator)
 {  
   if (comparisonOperator == "gt") {

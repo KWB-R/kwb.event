@@ -4,8 +4,13 @@
 \alias{getEventRelations}
 \title{Begin/End Relations between Events}
 \usage{
-getEventRelations(events, referenceName, partnerName,
-  parallelEventInfo = NULL, dbg = TRUE)
+getEventRelations(
+  events,
+  referenceName,
+  partnerName,
+  parallelEventInfo = NULL,
+  dbg = TRUE
+)
 }
 \arguments{
 \item{events}{list of event lists (in a data frame), as e.g. returned by 
@@ -33,7 +38,7 @@ relations between begin and end of events
 data(rainEvents)
   
 cat(sprintf(
-  "Event lists available for: \%s\\n", 
+  "Event lists available for: \%s\n", 
    paste(names(rainEvents), collapse = ", ")
 ))
   
@@ -105,7 +110,7 @@ ganttPlotEvents(
   
 graphics::title(paste(
   "Events at Wil (red), starting before the start and ending before",
-  "the end\\nof the events at BlnX (blue)"
+  "the end\nof the events at BlnX (blue)"
 ))
   
 # Reset graphical parameters

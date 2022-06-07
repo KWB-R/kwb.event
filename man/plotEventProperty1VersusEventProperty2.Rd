@@ -4,9 +4,16 @@
 \alias{plotEventProperty1VersusEventProperty2}
 \title{Plot Event Property 1 versus Event Property 2}
 \usage{
-plotEventProperty1VersusEventProperty2(events, propertyName1, propertyName2,
-  eventNumbers = events$eventNumber, xlab = propertyName1,
-  ylab = propertyName2, cex = 0.7, ...)
+plotEventProperty1VersusEventProperty2(
+  events,
+  propertyName1,
+  propertyName2,
+  eventNumbers = events$eventNumber,
+  xlab = propertyName1,
+  ylab = propertyName2,
+  cex = 0.7,
+  ...
+)
 }
 \arguments{
 \item{events}{data frame with at least two columns named as given in 

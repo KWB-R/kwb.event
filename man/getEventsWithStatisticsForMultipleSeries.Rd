@@ -4,9 +4,13 @@
 \alias{getEventsWithStatisticsForMultipleSeries}
 \title{Get Events with Statistics for multiple Series}
 \usage{
-getEventsWithStatisticsForMultipleSeries(rainData, eventSeparationTime,
-  signalWidth = kwb.datetime::getTimestepInSeconds(timestamps = rainData[,
-  1]), signalThreshold = 0, signalComparisonOperator = "gt")
+getEventsWithStatisticsForMultipleSeries(
+  rainData,
+  eventSeparationTime,
+  signalWidth = kwb.datetime::getTimestepInSeconds(timestamps = rainData[, 1]),
+  signalThreshold = 0,
+  signalComparisonOperator = "gt"
+)
 }
 \arguments{
 \item{rainData}{data frame with time stamps in the first column and rain

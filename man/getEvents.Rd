@@ -4,10 +4,16 @@
 \alias{getEvents}
 \title{Get Events}
 \usage{
-getEvents(rainData, seriesName, signalThreshold = 0,
-  signalComparisonOperator = "gt", eventSeparationTime = 6 * 3600,
-  eventSeparationOperator = "gt", signalWidth = NA,
-  column.time = names(rainData)[1])
+getEvents(
+  rainData,
+  seriesName,
+  signalThreshold = 0,
+  signalComparisonOperator = "gt",
+  eventSeparationTime = 6 * 3600,
+  eventSeparationOperator = "gt",
+  signalWidth = NA,
+  column.time = names(rainData)[1]
+)
 }
 \arguments{
 \item{rainData}{data frame with time stamps in the first column and rain

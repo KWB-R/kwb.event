@@ -4,8 +4,12 @@
 \alias{hsEventNumber}
 \title{number timestamps according to event information}
 \usage{
-hsEventNumber(tstamps, events, eventNumbers = 1:nrow(events),
-  commaSeparated = FALSE)
+hsEventNumber(
+  tstamps,
+  events,
+  eventNumbers = seq_len(nrow(events)),
+  commaSeparated = FALSE
+)
 }
 \arguments{
 \item{tstamps}{vector of timestamps}
@@ -13,7 +17,7 @@ hsEventNumber(tstamps, events, eventNumbers = 1:nrow(events),
 \item{events}{event information as returned by \code{\link{hsEvents}}}
 
 \item{eventNumbers}{optional vector of event numbers with as many elements as
-there are rows in \emph{tstamps}. Default: 1:nrow(\emph{events})}
+there are rows in \emph{tstamps}. Default: \code{seq_len(nrow(events))}}
 
 \item{commaSeparated}{if there are timestamps taht belong to more than one
 event, the default behaviour (commaSeparated = FALSE) of this function is
