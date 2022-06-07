@@ -51,8 +51,12 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">hsEventNumber</span><span class="op">(</span><span class="va">tstamps</span>, <span class="va">events</span>, eventNumbers <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">events</span><span class="op">)</span>,
-  commaSeparated <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">hsEventNumber</span><span class="op">(</span>
+  <span class="va">tstamps</span>,
+  <span class="va">events</span>,
+  eventNumbers <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq_len</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">events</span><span class="op">)</span><span class="op">)</span>,
+  commaSeparated <span class="op">=</span> <span class="cn">FALSE</span>
+<span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -63,7 +67,7 @@
 <dd><p>event information as returned by <code><a href="hsEvents.html">hsEvents</a></code></p></dd>
 <dt>eventNumbers</dt>
 <dd><p>optional vector of event numbers with as many elements as
-there are rows in <em>tstamps</em>. Default: 1:nrow(<em>events</em>)</p></dd>
+there are rows in <em>tstamps</em>. Default: <code>seq_len(nrow(events))</code></p></dd>
 <dt>commaSeparated</dt>
 <dd><p>if there are timestamps taht belong to more than one
 event, the default behaviour (commaSeparated = FALSE) of this function is

@@ -51,9 +51,13 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">getEventsWithStatisticsForMultipleSeries</span><span class="op">(</span><span class="va">rainData</span>, <span class="va">eventSeparationTime</span>,
-  signalWidth <span class="op">=</span> <span class="fu">kwb.datetime</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kwb.datetime/man/getTimestepInSeconds.html" class="external-link">getTimestepInSeconds</a></span><span class="op">(</span>timestamps <span class="op">=</span> <span class="va">rainData</span><span class="op">[</span>,
-  <span class="fl">1</span><span class="op">]</span><span class="op">)</span>, signalThreshold <span class="op">=</span> <span class="fl">0</span>, signalComparisonOperator <span class="op">=</span> <span class="st">"gt"</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">getEventsWithStatisticsForMultipleSeries</span><span class="op">(</span>
+  <span class="va">rainData</span>,
+  <span class="va">eventSeparationTime</span>,
+  signalWidth <span class="op">=</span> <span class="fu">kwb.datetime</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/kwb.datetime/man/getTimestepInSeconds.html" class="external-link">getTimestepInSeconds</a></span><span class="op">(</span>timestamps <span class="op">=</span> <span class="va">rainData</span><span class="op">[</span>, <span class="fl">1</span><span class="op">]</span><span class="op">)</span>,
+  signalThreshold <span class="op">=</span> <span class="fl">0</span>,
+  signalComparisonOperator <span class="op">=</span> <span class="st">"gt"</span>
+<span class="op">)</span></code></pre></div>
     </div>
 
     <div class="section level2">
