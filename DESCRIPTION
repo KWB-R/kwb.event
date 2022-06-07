@@ -1,6 +1,6 @@
 Package: kwb.event
 Title: Generate Events from Time Series and Work with Events
-Version: 0.3.0.9000
+Version: 0.4.0
 Authors@R: 
     c(person(given = "Hauke",
              family = "Sonnenberg",
@@ -12,6 +12,8 @@ Authors@R:
              role = "ctb",
              email = "michael.rustler@kompetenz-wasser.de",
              comment = c(ORCID = "0000-0003-0647-7726")),
+      person(given = MIA-CSO",
+             role = "fnd"),             
       person(given = "Kompetenzzentrum Wasser Berlin gGmbH (KWB)",
              role = "cph"))
 Description: Functions to generate events from time series and

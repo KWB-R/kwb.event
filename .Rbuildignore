@@ -15,3 +15,4 @@ LICENSE\.md$
 ^index\.md$
 ^R/\.init_package\.R$
 ^\.github$
+^pkgdown$

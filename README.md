@@ -3,6 +3,7 @@
 [![codecov](https://codecov.io/github/KWB-R/kwb.event/branch/master/graphs/badge.svg)](https://codecov.io/github/KWB-R/kwb.event)
 [![Project Status](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/kwb.event)]()
+[![R-Universe_Status_Badge](https://kwb-r.r-universe.dev/badges/kwb.event)](https://kwb-r.r-universe.dev/)
 
 # kwb.event
 
