@@ -2,7 +2,7 @@ pandoc: 2.7.3
 pkgdown: 2.0.3
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-06-07T21:31Z
+last_built: 2022-06-08T16:55Z
 urls:
   reference: https://kwb-r.github.io/kwb.event/reference
   article: https://kwb-r.github.io/kwb.event/articles
