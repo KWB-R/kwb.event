@@ -4,8 +4,14 @@
 \alias{exampleEvents}
 \title{Example Events}
 \usage{
-exampleEvents(signalWidth = 60, eventSeparationTime = 60 * signalWidth,
-  from = "2015-06-11", to = "2015-06-12", signalDensity = 0.01, ...)
+exampleEvents(
+  signalWidth = 60,
+  eventSeparationTime = 60 * signalWidth,
+  from = "2015-06-11",
+  to = "2015-06-12",
+  signalDensity = 0.01,
+  ...
+)
 }
 \arguments{
 \item{signalWidth}{see description in \code{\link{hsEvents}}}

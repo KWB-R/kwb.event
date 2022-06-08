@@ -4,9 +4,13 @@
 \alias{filterEventsWithStatistics}
 \title{Filter Events with Statistics}
 \usage{
-filterEventsWithStatistics(eventData, durationThreshold = 0,
-  durationComparisonOperator = "gt", sumThreshold = 0,
-  sumComparisonOperator = "gt")
+filterEventsWithStatistics(
+  eventData,
+  durationThreshold = 0,
+  durationComparisonOperator = "gt",
+  sumThreshold = 0,
+  sumComparisonOperator = "gt"
+)
 }
 \arguments{
 \item{eventData}{eventData of one time series, as returned in one list

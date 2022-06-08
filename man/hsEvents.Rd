@@ -4,8 +4,16 @@
 \alias{hsEvents}
 \title{Timestamp differences to events}
 \usage{
-hsEvents(tseries, evtSepTime, signalWidth, tUnit = "s", pause = TRUE,
-  evtSepOp = "gt", dbg = FALSE, check.sorting = FALSE)
+hsEvents(
+  tseries,
+  evtSepTime,
+  signalWidth,
+  tUnit = "s",
+  pause = TRUE,
+  evtSepOp = "gt",
+  dbg = FALSE,
+  check.sorting = FALSE
+)
 }
 \arguments{
 \item{tseries}{vector containing a sorted list of timestamps.}
@@ -47,5 +55,5 @@ Creates events from vector \emph{tseries} of timestamps based on time
 differences between consecutive timestamps in \emph{tseries}.
 }
 \seealso{
-\code{\link{hsEventsOnChange}}
+\code{\link{eventsOnChange}}
 }

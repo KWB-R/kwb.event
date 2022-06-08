@@ -6,7 +6,7 @@
 #'   i.e. containing columns \code{tBeg.event1}, \code{tEnd.event1}, 
 #'   \code{tBeg.event2first}, \code{tEnd.event2last}, \code{tBeg.merged}, 
 #'   \code{tEnd.merged}
-#' 
+#' @export
 plotMergedEventInfoForValidation <- function(mergedEvents)
 {
   beginEndColumns <- c(
@@ -68,7 +68,7 @@ plotMergedEventInfoForValidation <- function(mergedEvents)
 #' 
 #' @param eventInfo as returned by \emph{getParallelEventsInfo}, with first
 #'   columns (timestamps) removed
-#' 
+#' @export
 plotEventInfo <- function(eventInfo)
 {
   graphics::plot(
@@ -106,7 +106,7 @@ plotEventInfo <- function(eventInfo)
 #' @param ylab default: \code{propertyName2}
 #' @param cex character expansion factor passed to \code{\link[graphics]{plot}}
 #' @param \dots further arguments passed to \code{\link[graphics]{plot}}
-#' 
+#' @export
 plotEventProperty1VersusEventProperty2 <- function(
   events, propertyName1, propertyName2, eventNumbers = events$eventNumber,
   xlab = propertyName1, ylab = propertyName2, cex = 0.7, ...
@@ -164,7 +164,7 @@ plotEventProperty1VersusEventProperty2 <- function(
 #' @param n.xticks passed to \code{\link[kwb.plot]{addTimeAxis}}
 #' @param showLabels passed to \code{\link{ganttPlotEvents}}
 #' @param \dots further arguments passed to ganttPlotEvents
-#' 
+#' @export
 ganttPlotEventLists <- function(
   eventLists, margin.top = 0.8, time.format = NULL, n.xticks = 10, 
   showLabels = TRUE, ...
@@ -273,7 +273,7 @@ ganttPlotEventLists <- function(
 #' @param alternating passed to \code{addLabels}
 #' @param adj passed to \code{text} plotting the event labels
 #' @param \dots further arguments passed to rect or segments
-#' 
+#' @export
 ganttPlotEvents <- function(
   events, add = FALSE, y1 = 1, y2 = y1 + 1, xlim = NULL, 
   ylim = c(min(y1), max(y2)), col = "black", density = 5, showLabels = TRUE,

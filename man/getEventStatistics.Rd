@@ -4,8 +4,13 @@
 \alias{getEventStatistics}
 \title{Get Event Statistics}
 \usage{
-getEventStatistics(dataFrame, seriesName, events, functions = c("sum", "mean",
-  "min", "max", "number.na"), eventNumbers = 1:nrow(events))
+getEventStatistics(
+  dataFrame,
+  seriesName,
+  events,
+  functions = c("sum", "mean", "min", "max", "number.na"),
+  eventNumbers = 1:nrow(events)
+)
 }
 \arguments{
 \item{dataFrame}{data frame containing event data}

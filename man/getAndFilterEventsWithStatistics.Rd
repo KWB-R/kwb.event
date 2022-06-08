@@ -4,10 +4,18 @@
 \alias{getAndFilterEventsWithStatistics}
 \title{Get and filter Events with Statistics}
 \usage{
-getAndFilterEventsWithStatistics(rainData, seriesName, eventSeparationTime,
-  signalThreshold = 0, durationThreshold = 1, sumThreshold = 0,
-  signalComparisonOperator = "gt", durationComparisonOperator = "gt",
-  sumComparisonOperator = "gt", signalWidth = NA)
+getAndFilterEventsWithStatistics(
+  rainData,
+  seriesName,
+  eventSeparationTime,
+  signalThreshold = 0,
+  durationThreshold = 1,
+  sumThreshold = 0,
+  signalComparisonOperator = "gt",
+  durationComparisonOperator = "gt",
+  sumComparisonOperator = "gt",
+  signalWidth = NA
+)
 }
 \arguments{
 \item{rainData}{passed to \code{\link{getEventsWithStatistics}}}

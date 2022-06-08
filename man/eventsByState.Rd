@@ -4,8 +4,14 @@
 \alias{eventsByState}
 \title{Get Events by Evaluation of a State Variable}
 \usage{
-eventsByState(timestamps, states, eventSeparationTime, signalWidth,
-  in.state = 1, out.state = 0)
+eventsByState(
+  timestamps,
+  states,
+  eventSeparationTime,
+  signalWidth,
+  in.state = 1,
+  out.state = 0
+)
 }
 \arguments{
 \item{timestamps}{vector of timestamps (POSIXct)}

@@ -16,7 +16,7 @@
 #'   passed on to \code{\link{hsEvents}} that groups these "signal" timestamps
 #'   into events
 #' @param \dots further arguments passed to \code{\link{hsEvents}}
-#' 
+#' @export
 #' @examples 
 #' events <- exampleEvents()
 #'   
@@ -90,5 +90,5 @@ exampleEvents <- function(
 
 .deleteItemsRandomly <- function(x, n)
 {
-  sort(x[-sample(1:length(x), n)])
+  sort(x[-sample(seq_along(x), n)])
 }

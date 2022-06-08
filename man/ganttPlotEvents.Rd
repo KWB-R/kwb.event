@@ -4,12 +4,30 @@
 \alias{ganttPlotEvents}
 \title{Gantt-like Diagram to plot Event's Time Extension}
 \usage{
-ganttPlotEvents(events, add = FALSE, y1 = 1, y2 = y1 + 1, xlim = NULL,
-  ylim = c(min(y1), max(y2)), col = "black", density = 5,
-  showLabels = TRUE, eventLabels = rownames(events), yLabel = (y1 + y2)/2,
-  type = "rectangle", title = "", leftMargin = 0.2, xlab = "Time",
-  cex = 0.8, indicate = NULL, indicationColour = "red",
-  bandheight = 0.1, alternating = FALSE, adj = 0.5, ...)
+ganttPlotEvents(
+  events,
+  add = FALSE,
+  y1 = 1,
+  y2 = y1 + 1,
+  xlim = NULL,
+  ylim = c(min(y1), max(y2)),
+  col = "black",
+  density = 5,
+  showLabels = TRUE,
+  eventLabels = rownames(events),
+  yLabel = (y1 + y2)/2,
+  type = "rectangle",
+  title = "",
+  leftMargin = 0.2,
+  xlab = "Time",
+  cex = 0.8,
+  indicate = NULL,
+  indicationColour = "red",
+  bandheight = 0.1,
+  alternating = FALSE,
+  adj = 0.5,
+  ...
+)
 }
 \arguments{
 \item{events}{event list as retrieved by \code{\link{hsEvents}}. Required
