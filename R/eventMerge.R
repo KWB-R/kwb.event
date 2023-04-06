@@ -78,7 +78,7 @@ mergeAllEvents <- function(eventList, dbg = TRUE)
 #' @param renumber if TRUE, rows in result data frame are renumbered from one to
 #'   number of rows.
 #' @param dbg if \code{TRUE}, debug messages are shown.
-#' 
+#' @export
 #' @return data frame with fields \emph{tBeg}, \emph{tEnd}, \emph{dur}
 #'   containing the times of event begin and event end and the event duration in
 #'   seconds, respectively. The event duration is the difference between end and
